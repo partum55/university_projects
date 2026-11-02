@@ -1,0 +1,6 @@
+{
+  "name": "Investor Poland",
+  "country": "Poland",
+  "domain": "poland-investments.pl",
+  "other_info": "Default investor data for Poland"
+}

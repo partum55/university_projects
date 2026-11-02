@@ -1,0 +1,600 @@
+Date and Time: 2024-01-05 08:41:09
+Name: Linda Wilson
+Prioritization of Subjects: 1. Responsible AI; 2. Representation, Inference, and Reasoning in AI; 3. AI, Decision Making, and Society
+Scores:
+  - Fundamentals of Programming: 94
+  - Linear Algebra: 90
+  - Probability and Statistics: 90
+  - Worldview core: 87
+  - Decision Making: 85
+  - Introduction to Algorithms: 70
+  - Data Visualisation: 85
+
+Date and Time: 2024-01-05 08:44:09
+Name: Robert Rodriguez
+Prioritization of Subjects: 1. Responsible AI; 2. AI, Decision Making, and Society; 3. Representation, Inference, and Reasoning in AI
+Scores:
+  - Fundamentals of Programming: 82
+  - Linear Algebra: 98
+  - Probability and Statistics: 77
+  - Worldview core: 69
+  - Decision Making: 65
+  - Introduction to Algorithms: 88
+  - Data Visualisation: 65
+
+Date and Time: 2024-01-05 08:58:09
+Name: Mary Miller
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 98
+  - Linear Algebra: 79
+  - Probability and Statistics: 80
+  - Worldview core: 79
+  - Decision Making: 85
+  - Introduction to Algorithms: 63
+  - Data Visualisation: 96
+
+Date and Time: 2024-01-05 09:17:09
+Name: John Brown
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 80
+  - Linear Algebra: 88
+  - Probability and Statistics: 97
+  - Worldview core: 60
+  - Decision Making: 60
+  - Introduction to Algorithms: 88
+  - Data Visualisation: 92
+
+Date and Time: 2024-01-05 09:39:09
+Name: John Miller
+Prioritization of Subjects: 1. Representation, Inference, and Reasoning in AI; 2. Responsible AI; 3. AI, Decision Making, and Society
+Scores:
+  - Fundamentals of Programming: 90
+  - Linear Algebra: 85
+  - Probability and Statistics: 100
+  - Worldview core: 93
+  - Decision Making: 69
+  - Introduction to Algorithms: 75
+  - Data Visualisation: 81
+
+Date and Time: 2024-01-05 09:57:09
+Name: John Williams
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Responsible AI; 3. Representation, Inference, and Reasoning in AI
+Scores:
+  - Fundamentals of Programming: 65
+  - Linear Algebra: 72
+  - Probability and Statistics: 99
+  - Worldview core: 83
+  - Decision Making: 77
+  - Introduction to Algorithms: 72
+  - Data Visualisation: 87
+
+Date and Time: 2024-01-05 10:07:09
+Name: Robert Williams
+Prioritization of Subjects: 1. Responsible AI; 2. Representation, Inference, and Reasoning in AI; 3. AI, Decision Making, and Society
+Scores:
+  - Fundamentals of Programming: 73
+  - Linear Algebra: 74
+  - Probability and Statistics: 93
+  - Worldview core: 72
+  - Decision Making: 96
+  - Introduction to Algorithms: 81
+  - Data Visualisation: 66
+
+Date and Time: 2024-01-05 10:28:09
+Name: Jennifer Johnson
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Responsible AI; 3. Representation, Inference, and Reasoning in AI
+Scores:
+  - Fundamentals of Programming: 96
+  - Linear Algebra: 61
+  - Probability and Statistics: 79
+  - Worldview core: 69
+  - Decision Making: 86
+  - Introduction to Algorithms: 90
+  - Data Visualisation: 74
+
+Date and Time: 2024-01-05 10:46:09
+Name: William Wilson
+Prioritization of Subjects: 1. Responsible AI; 2. Representation, Inference, and Reasoning in AI; 3. AI, Decision Making, and Society
+Scores:
+  - Fundamentals of Programming: 82
+  - Linear Algebra: 77
+  - Probability and Statistics: 98
+  - Worldview core: 63
+  - Decision Making: 73
+  - Introduction to Algorithms: 71
+  - Data Visualisation: 86
+
+Date and Time: 2024-01-05 11:16:09
+Name: James Jones
+Prioritization of Subjects: 1. Responsible AI; 2. Representation, Inference, and Reasoning in AI; 3. AI, Decision Making, and Society
+Scores:
+  - Fundamentals of Programming: 72
+  - Linear Algebra: 84
+  - Probability and Statistics: 85
+  - Worldview core: 90
+  - Decision Making: 82
+  - Introduction to Algorithms: 70
+  - Data Visualisation: 70
+
+Date and Time: 2024-01-05 11:40:09
+Name: Robert Davis
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Responsible AI; 3. Representation, Inference, and Reasoning in AI
+Scores:
+  - Fundamentals of Programming: 95
+  - Linear Algebra: 100
+  - Probability and Statistics: 80
+  - Worldview core: 75
+  - Decision Making: 77
+  - Introduction to Algorithms: 96
+  - Data Visualisation: 61
+
+Date and Time: 2024-01-05 11:45:09
+Name: Robert Wilson
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Responsible AI; 3. Representation, Inference, and Reasoning in AI
+Scores:
+  - Fundamentals of Programming: 65
+  - Linear Algebra: 63
+  - Probability and Statistics: 82
+  - Worldview core: 87
+  - Decision Making: 78
+  - Introduction to Algorithms: 77
+  - Data Visualisation: 74
+
+Date and Time: 2024-01-05 11:59:09
+Name: Linda Johnson
+Prioritization of Subjects: 1. Responsible AI; 2. Representation, Inference, and Reasoning in AI; 3. AI, Decision Making, and Society
+Scores:
+  - Fundamentals of Programming: 62
+  - Linear Algebra: 76
+  - Probability and Statistics: 87
+  - Worldview core: 76
+  - Decision Making: 79
+  - Introduction to Algorithms: 69
+  - Data Visualisation: 62
+
+Date and Time: 2024-01-05 12:13:09
+Name: Robert Miller
+Prioritization of Subjects: 1. Responsible AI; 2. Representation, Inference, and Reasoning in AI; 3. AI, Decision Making, and Society
+Scores:
+  - Fundamentals of Programming: 64
+  - Linear Algebra: 92
+  - Probability and Statistics: 61
+  - Worldview core: 60
+  - Decision Making: 87
+  - Introduction to Algorithms: 84
+  - Data Visualisation: 71
+
+Date and Time: 2024-01-05 12:23:09
+Name: Elizabeth Jones
+Prioritization of Subjects: 1. Responsible AI; 2. Representation, Inference, and Reasoning in AI; 3. AI, Decision Making, and Society
+Scores:
+  - Fundamentals of Programming: 100
+  - Linear Algebra: 62
+  - Probability and Statistics: 76
+  - Worldview core: 80
+  - Decision Making: 78
+  - Introduction to Algorithms: 68
+  - Data Visualisation: 71
+
+Date and Time: 2024-01-05 12:44:09
+Name: Elizabeth Wilson
+Prioritization of Subjects: 1. Responsible AI; 2. Representation, Inference, and Reasoning in AI; 3. AI, Decision Making, and Society
+Scores:
+  - Fundamentals of Programming: 74
+  - Linear Algebra: 65
+  - Probability and Statistics: 83
+  - Worldview core: 97
+  - Decision Making: 100
+  - Introduction to Algorithms: 96
+  - Data Visualisation: 78
+
+Date and Time: 2024-01-05 12:49:09
+Name: Mary Jones
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Responsible AI; 3. Representation, Inference, and Reasoning in AI
+Scores:
+  - Fundamentals of Programming: 66
+  - Linear Algebra: 78
+  - Probability and Statistics: 87
+  - Worldview core: 62
+  - Decision Making: 79
+  - Introduction to Algorithms: 79
+  - Data Visualisation: 61
+
+Date and Time: 2024-01-05 13:04:09
+Name: Elizabeth Miller
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 88
+  - Linear Algebra: 95
+  - Probability and Statistics: 62
+  - Worldview core: 68
+  - Decision Making: 82
+  - Introduction to Algorithms: 77
+  - Data Visualisation: 71
+
+Date and Time: 2024-01-05 13:12:09
+Name: James Miller
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 84
+  - Linear Algebra: 80
+  - Probability and Statistics: 77
+  - Worldview core: 69
+  - Decision Making: 82
+  - Introduction to Algorithms: 64
+  - Data Visualisation: 81
+
+Date and Time: 2024-01-05 13:21:09
+Name: William Garcia
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Responsible AI; 3. Representation, Inference, and Reasoning in AI
+Scores:
+  - Fundamentals of Programming: 100
+  - Linear Algebra: 65
+  - Probability and Statistics: 88
+  - Worldview core: 82
+  - Decision Making: 88
+  - Introduction to Algorithms: 78
+  - Data Visualisation: 99
+
+Date and Time: 2024-01-05 13:44:09
+Name: Jennifer Jones
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 60
+  - Linear Algebra: 67
+  - Probability and Statistics: 70
+  - Worldview core: 72
+  - Decision Making: 99
+  - Introduction to Algorithms: 81
+  - Data Visualisation: 75
+
+Date and Time: 2024-01-05 14:00:09
+Name: Jennifer Rodriguez
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 75
+  - Linear Algebra: 68
+  - Probability and Statistics: 62
+  - Worldview core: 78
+  - Decision Making: 68
+  - Introduction to Algorithms: 97
+  - Data Visualisation: 74
+
+Date and Time: 2024-01-05 14:09:09
+Name: Mary Brown
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Responsible AI; 3. Representation, Inference, and Reasoning in AI
+Scores:
+  - Fundamentals of Programming: 93
+  - Linear Algebra: 92
+  - Probability and Statistics: 70
+  - Worldview core: 86
+  - Decision Making: 69
+  - Introduction to Algorithms: 97
+  - Data Visualisation: 65
+
+Date and Time: 2024-01-05 14:29:09
+Name: Robert Smith
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Responsible AI; 3. Representation, Inference, and Reasoning in AI
+Scores:
+  - Fundamentals of Programming: 85
+  - Linear Algebra: 79
+  - Probability and Statistics: 80
+  - Worldview core: 86
+  - Decision Making: 100
+  - Introduction to Algorithms: 73
+  - Data Visualisation: 97
+
+Date and Time: 2024-01-05 14:57:09
+Name: Patricia Garcia
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Responsible AI; 3. Representation, Inference, and Reasoning in AI
+Scores:
+  - Fundamentals of Programming: 83
+  - Linear Algebra: 82
+  - Probability and Statistics: 67
+  - Worldview core: 99
+  - Decision Making: 74
+  - Introduction to Algorithms: 97
+  - Data Visualisation: 91
+
+Date and Time: 2024-01-05 15:26:09
+Name: James Williams
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 77
+  - Linear Algebra: 82
+  - Probability and Statistics: 98
+  - Worldview core: 79
+  - Decision Making: 99
+  - Introduction to Algorithms: 62
+  - Data Visualisation: 83
+
+Date and Time: 2024-01-05 15:47:09
+Name: Michael Williams
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 70
+  - Linear Algebra: 63
+  - Probability and Statistics: 88
+  - Worldview core: 98
+  - Decision Making: 99
+  - Introduction to Algorithms: 98
+  - Data Visualisation: 77
+
+Date and Time: 2024-01-05 16:14:09
+Name: Patricia Johnson
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 80
+  - Linear Algebra: 61
+  - Probability and Statistics: 61
+  - Worldview core: 62
+  - Decision Making: 70
+  - Introduction to Algorithms: 67
+  - Data Visualisation: 92
+
+Date and Time: 2024-01-05 16:34:09
+Name: Michael Davis
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 96
+  - Linear Algebra: 82
+  - Probability and Statistics: 68
+  - Worldview core: 71
+  - Decision Making: 75
+  - Introduction to Algorithms: 90
+  - Data Visualisation: 79
+
+Date and Time: 2024-01-05 17:03:09
+Name: Elizabeth Garcia
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 95
+  - Linear Algebra: 99
+  - Probability and Statistics: 60
+  - Worldview core: 78
+  - Decision Making: 90
+  - Introduction to Algorithms: 80
+  - Data Visualisation: 98
+
+Date and Time: 2024-01-05 17:21:09
+Name: Michael Wilson
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 99
+  - Linear Algebra: 66
+  - Probability and Statistics: 73
+  - Worldview core: 98
+  - Decision Making: 85
+  - Introduction to Algorithms: 82
+  - Data Visualisation: 89
+
+Date and Time: 2024-01-05 17:45:09
+Name: William Miller
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 96
+  - Linear Algebra: 98
+  - Probability and Statistics: 92
+  - Worldview core: 71
+  - Decision Making: 89
+  - Introduction to Algorithms: 79
+  - Data Visualisation: 87
+
+Date and Time: 2024-01-05 18:00:09
+Name: Michael Brown
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 99
+  - Linear Algebra: 83
+  - Probability and Statistics: 73
+  - Worldview core: 80
+  - Decision Making: 73
+  - Introduction to Algorithms: 98
+  - Data Visualisation: 75
+
+Date and Time: 2024-01-05 18:26:09
+Name: Elizabeth Williams
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 86
+  - Linear Algebra: 100
+  - Probability and Statistics: 81
+  - Worldview core: 81
+  - Decision Making: 90
+  - Introduction to Algorithms: 83
+  - Data Visualisation: 93
+
+Date and Time: 2024-01-05 18:34:09
+Name: Michael Miller
+Prioritization of Subjects: 1. Representation, Inference, and Reasoning in AI; 2. Responsible AI; 3. AI, Decision Making, and Society
+Scores:
+  - Fundamentals of Programming: 99
+  - Linear Algebra: 69
+  - Probability and Statistics: 66
+  - Worldview core: 98
+  - Decision Making: 60
+  - Introduction to Algorithms: 87
+  - Data Visualisation: 72
+
+Date and Time: 2024-01-05 19:03:09
+Name: Mary Davis
+Prioritization of Subjects: 1. Representation, Inference, and Reasoning in AI; 2. Responsible AI; 3. AI, Decision Making, and Society
+Scores:
+  - Fundamentals of Programming: 86
+  - Linear Algebra: 75
+  - Probability and Statistics: 83
+  - Worldview core: 96
+  - Decision Making: 68
+  - Introduction to Algorithms: 78
+  - Data Visualisation: 92
+
+Date and Time: 2024-01-05 19:06:09
+Name: Patricia Williams
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 91
+  - Linear Algebra: 78
+  - Probability and Statistics: 99
+  - Worldview core: 74
+  - Decision Making: 82
+  - Introduction to Algorithms: 71
+  - Data Visualisation: 66
+
+Date and Time: 2024-01-05 19:24:09
+Name: Linda Garcia
+Prioritization of Subjects: 1. Representation, Inference, and Reasoning in AI; 2. AI, Decision Making, and Society; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 67
+  - Linear Algebra: 73
+  - Probability and Statistics: 100
+  - Worldview core: 71
+  - Decision Making: 92
+  - Introduction to Algorithms: 68
+  - Data Visualisation: 64
+
+Date and Time: 2024-01-05 19:29:09
+Name: Robert Jones
+Prioritization of Subjects: 1. Representation, Inference, and Reasoning in AI; 2. Responsible AI; 3. AI, Decision Making, and Society
+Scores:
+  - Fundamentals of Programming: 70
+  - Linear Algebra: 86
+  - Probability and Statistics: 60
+  - Worldview core: 76
+  - Decision Making: 74
+  - Introduction to Algorithms: 84
+  - Data Visualisation: 87
+
+Date and Time: 2024-01-05 19:40:09
+Name: Linda Brown
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 80
+  - Linear Algebra: 96
+  - Probability and Statistics: 90
+  - Worldview core: 69
+  - Decision Making: 81
+  - Introduction to Algorithms: 76
+  - Data Visualisation: 76
+
+Date and Time: 2024-01-05 20:10:09
+Name: Elizabeth Rodriguez
+Prioritization of Subjects: 1. Representation, Inference, and Reasoning in AI; 2. Responsible AI; 3. AI, Decision Making, and Society
+Scores:
+  - Fundamentals of Programming: 64
+  - Linear Algebra: 89
+  - Probability and Statistics: 100
+  - Worldview core: 82
+  - Decision Making: 75
+  - Introduction to Algorithms: 90
+  - Data Visualisation: 98
+
+Date and Time: 2024-01-05 20:26:09
+Name: Patricia Wilson
+Prioritization of Subjects: 1. Representation, Inference, and Reasoning in AI; 2. AI, Decision Making, and Society; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 61
+  - Linear Algebra: 61
+  - Probability and Statistics: 98
+  - Worldview core: 96
+  - Decision Making: 75
+  - Introduction to Algorithms: 68
+  - Data Visualisation: 64
+
+Date and Time: 2024-01-05 20:34:09
+Name: William Rodriguez
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 73
+  - Linear Algebra: 65
+  - Probability and Statistics: 69
+  - Worldview core: 71
+  - Decision Making: 66
+  - Introduction to Algorithms: 83
+  - Data Visualisation: 62
+
+Date and Time: 2024-01-05 20:48:09
+Name: Mary Wilson
+Prioritization of Subjects: 1. Representation, Inference, and Reasoning in AI; 2. AI, Decision Making, and Society; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 93
+  - Linear Algebra: 95
+  - Probability and Statistics: 87
+  - Worldview core: 87
+  - Decision Making: 91
+  - Introduction to Algorithms: 79
+  - Data Visualisation: 92
+
+Date and Time: 2024-01-05 20:59:09
+Name: Elizabeth Davis
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 61
+  - Linear Algebra: 86
+  - Probability and Statistics: 91
+  - Worldview core: 91
+  - Decision Making: 88
+  - Introduction to Algorithms: 64
+  - Data Visualisation: 91
+
+Date and Time: 2024-01-05 21:27:09
+Name: Patricia Smith
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 95
+  - Linear Algebra: 98
+  - Probability and Statistics: 93
+  - Worldview core: 91
+  - Decision Making: 64
+  - Introduction to Algorithms: 88
+  - Data Visualisation: 69
+
+Date and Time: 2024-01-05 21:47:09
+Name: John Rodriguez
+Prioritization of Subjects: 1. Representation, Inference, and Reasoning in AI; 2. AI, Decision Making, and Society; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 89
+  - Linear Algebra: 94
+  - Probability and Statistics: 64
+  - Worldview core: 80
+  - Decision Making: 98
+  - Introduction to Algorithms: 92
+  - Data Visualisation: 65
+
+Date and Time: 2024-01-05 21:55:09
+Name: William Williams
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 77
+  - Linear Algebra: 90
+  - Probability and Statistics: 60
+  - Worldview core: 65
+  - Decision Making: 95
+  - Introduction to Algorithms: 67
+  - Data Visualisation: 65
+
+Date and Time: 2024-01-05 22:07:09
+Name: Robert Garcia
+Prioritization of Subjects: 1. Representation, Inference, and Reasoning in AI; 2. AI, Decision Making, and Society; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 68
+  - Linear Algebra: 75
+  - Probability and Statistics: 75
+  - Worldview core: 90
+  - Decision Making: 87
+  - Introduction to Algorithms: 97
+  - Data Visualisation: 74
+
+Date and Time: 2024-01-05 22:27:09
+Name: James Davis
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 70
+  - Linear Algebra: 63
+  - Probability and Statistics: 71
+  - Worldview core: 65
+  - Decision Making: 82
+  - Introduction to Algorithms: 72
+  - Data Visualisation: 93
+

@@ -1,0 +1,36 @@
+Date and Time: 2024-01-05 08:41:09
+Name: Linda Wilson
+Prioritization of Subjects: 1. Responsible AI; 2. Representation, Inference, and Reasoning in AI; 3. AI, Decision Making, and Society
+Scores:
+  - Fundamentals of Programming: 97
+  - Linear Algebra: 90
+  - Probability and Statistics: 91
+  - Worldview core: 87
+  - Decision Making: 85
+  - Introduction to Algorithms: 72
+  - Data Visualisation: 87
+
+Date and Time: 2024-01-05 08:44:09
+Name: Robert Rodriguezes
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Responsible AI; 3. Representation, Inference, and Reasoning in AI
+Scores:
+  - Fundamentals of Programming: 89
+  - Linear Algebra: 99
+  - Probability and Statistics: 77
+  - Worldview core: 69
+  - Decision Making: 65
+  - Introduction to Algorithms: 88
+  - Data Visualisation: 68
+
+Date and Time: 2024-01-05 08:58:09
+Name: Mary Miller
+Prioritization of Subjects: 1. AI, Decision Making, and Society; 2. Representation, Inference, and Reasoning in AI; 3. Responsible AI
+Scores:
+  - Fundamentals of Programming: 90
+  - Linear Algebra: 100
+  - Probability and Statistics: 80
+  - Worldview core: 79
+  - Decision Making: 85
+  - Introduction to Algorithms: 63
+  - Data Visualisation: 67
+

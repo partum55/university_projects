@@ -1,0 +1,6 @@
+{
+  "name": "Investor Ukraine",
+  "country": "Ukraine",
+  "domain": "ukraine-investments.ua",
+  "other_info": "Default investor data for Ukraine"
+}

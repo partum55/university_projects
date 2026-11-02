@@ -1,0 +1,9 @@
+a,1,B,W
+b,1,W,False
+c,1,B,False
+a,2,W,False
+b,2,B,B
+c,2,W,W
+a,3,B,False
+b,3,W,False
+c,3,B,False

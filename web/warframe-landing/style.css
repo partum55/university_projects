@@ -1,0 +1,1446 @@
+/* ============================================================
+   LeafyPod – styles matched to Figma design (node 27-220)
+   Design viewport: 1512 px
+   Font: Fixel Display (weights: Light 300, Regular 400,
+         SemiBold 600, Bold 700)
+   ============================================================ */
+
+/* ---------- design tokens ---------- */
+:root {
+  --page-bg: #f3f2ee;
+  --section-soft: #ebe3de;
+  --section-olive: #909e7a;
+  --surface: #ffffff;
+  --ink: #33321e;
+  --ink-50: rgba(51, 50, 30, 0.5);
+  --muted-ink: #4a4938;
+  --brand: #45694e;
+  --brand-strong: #3b5941;
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 30px;
+  --shadow-soft: 0 14px 30px rgba(51, 50, 30, 0.08);
+  --container: 1384px;
+  --space-x: clamp(16px, 4vw, 64px);
+}
+
+/* ---------- reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: "Fixel Display", "Avenir Next", "Segoe UI", sans-serif;
+  background: var(--page-bg);
+  color: var(--ink);
+  line-height: 1.45;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, p, figure, blockquote { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- skip link ---------- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1200;
+  background: var(--brand);
+  color: var(--surface);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+.skip-link:focus-visible {
+  left: 16px;
+  top: 16px;
+}
+
+/* ---------- layout wrappers ---------- */
+.header,
+.hero,
+.how-it-works,
+.app,
+.reviews,
+.footer {
+  padding-inline: var(--space-x);
+}
+
+.header__container,
+.hero__container,
+.how-it-works__container,
+.features__container,
+.app__container,
+.package__container,
+.reviews__container,
+.footer__container,
+.footer__bottom {
+  max-width: var(--container);
+  margin-inline: auto;
+}
+
+.main {
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   HEADER  (Figma: logo 160x31, nav items 15px light #33321e50)
+   ============================================================ */
+.header {
+  padding-top: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  gap: 250px;
+}
+
+.header__logo,
+.footer__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.header__logo-image {
+  width: 160px;
+  max-width: none;
+}
+
+.footer__logo-image {
+  width: 179px;
+  max-width: none;
+}
+
+.header__logo-text,
+.footer__logo-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__nav-item {
+  flex-shrink: 0;
+}
+
+/* Figma: 15px, light (300), rgba(51,50,30,0.5), tracking 0.15px */
+.header__nav-link {
+  color: var(--ink-50);
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0.15px;
+  transition: color 0.2s ease;
+}
+.header__nav-link:hover,
+.header__nav-link:focus-visible {
+  color: var(--ink);
+}
+
+/* separators between nav items */
+.header__nav-item + .header__nav-item::before {
+  content: "|";
+  margin-right: 20px;
+  color: var(--ink-50);
+  font-size: 15px;
+  font-weight: 300;
+}
+
+/* mobile menu button */
+.header__menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--section-soft);
+  padding: 0;
+  cursor: pointer;
+}
+
+.header__menu-icon,
+.header__menu-icon::before,
+.header__menu-icon::after {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 99px;
+  background: var(--brand-strong);
+  margin-inline: auto;
+  position: relative;
+}
+.header__menu-icon::before,
+.header__menu-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.header__menu-icon::before { top: -6px; }
+.header__menu-icon::after  { top:  6px; }
+
+/* ============================================================
+   HERO  (Figma: title 66px SemiBold, 0.93 line-height,
+          description 18px Regular, button green pill)
+   ============================================================ */
+.hero {
+  margin-top: 0;
+}
+
+.hero__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 5vw, 72px);
+  align-items: center;
+  padding-top: 120px;
+}
+
+.hero__content {
+  max-width: 727px;
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.hero__title {
+  font-size: 66px;
+  font-weight: 600;
+  line-height: 0.93;
+  letter-spacing: -1.32px;
+  color: var(--ink);
+}
+
+.hero__description {
+  max-width: 556px;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.18px;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+/* CTA button */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+}
+
+.button--primary {
+  background: var(--brand);
+  color: var(--surface);
+  border-radius: 33px;
+  padding: 12px 29px;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: inherit;
+  box-shadow: 0 12px 20px rgba(69, 105, 78, 0.24);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.button--primary:hover,
+.button--primary:focus-visible {
+  background: var(--brand-strong);
+  transform: translateY(-1px);
+}
+
+.hero__cta {
+  align-self: flex-start;
+  margin-top: 14px;
+}
+
+.hero__image {
+  justify-self: end;
+  width: min(100%, 700px);
+  align-self: start;
+  margin-top: -120px;
+}
+
+.hero__product-image {
+  width: 100%;
+  object-fit: contain;
+}
+
+/* ============================================================
+   PROBLEMS SECTION
+   Figma: bg #909e7a, rounded 20px,
+   title uppercase white centered, 2x2 grid cards
+   ============================================================ */
+.problems,
+.package,
+.features {
+  margin-top: 76px;
+  padding: 56px 0;
+  border-radius: var(--radius-md);
+}
+
+.package {
+  margin-top: 0;
+}
+
+.problems,
+.package {
+  background: var(--section-olive);
+}
+
+.features {
+  background: var(--section-soft);
+}
+
+.problems__container {
+  padding-inline: clamp(26px, 4vw, 52px);
+}
+
+.problems__title {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.06;
+  text-align: center;
+  color: var(--surface);
+}
+
+.problems__list {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 1102px;
+  margin-inline: auto;
+}
+
+.problems__item {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 30px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.problems__item-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.problems__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: var(--brand);
+  flex-shrink: 0;
+}
+
+.problems__icon img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+.problems__item-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.problems__item-description {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+/* ============================================================
+   HOW IT WORKS
+   Figma: two-column, left text + right video/image
+   ============================================================ */
+.how-it-works,
+.app,
+.reviews {
+  margin-top: 76px;
+}
+
+.app + .reviews {
+  margin-top: 0;
+}
+
+.how-it-works__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 4vw, 54px);
+  align-items: center;
+}
+
+.how-it-works__content {
+  min-width: 0;
+  max-width: 500px;
+}
+
+.how-it-works__title {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.how-it-works__subtitle {
+  margin-top: 24px;
+  color: var(--brand);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.how-it-works__steps {
+  margin-top: 22px;
+  display: grid;
+  gap: 12px;
+}
+
+.how-it-works__step {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  height: 60px;
+  padding: 10px 18px 10px 12px;
+}
+
+.how-it-works__step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--surface);
+  font-size: 32px;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.how-it-works__step-text {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.how-it-works__video,
+.app__phone-video {
+  width: 100%;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  object-fit: cover;
+}
+
+.how-it-works__image,
+.app__video {
+  width: 100%;
+}
+
+/* ============================================================
+   FEATURES SECTION
+   Figma: bg #ebe3de, rounded 20px, 3x2 grid white cards
+   ============================================================ */
+.features__container {
+  padding-inline: clamp(26px, 4vw, 52px);
+}
+
+.features__title {
+  font-size: 48px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.features__grid {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1033px;
+  margin-inline: auto;
+}
+
+.features__item {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 30px 32px;
+  min-height: 226px;
+  position: relative;
+  overflow: hidden;
+}
+
+.features__item-icon {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 19px;
+  right: 32px;
+}
+
+.features__item-icon img {
+  width: 48px;
+  height: 48px;
+}
+
+.features__item-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--brand);
+  max-width: 225px;
+}
+
+.features__item-description {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+/* ============================================================
+   MOBILE APP SECTION
+   Figma: white bg, two-column, numbered features list
+   ============================================================ */
+.app {
+  background: var(--surface);
+  padding-top: 112px;
+  padding-bottom: 80px;
+  margin-top: 0;
+}
+
+.app__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 4vw, 54px);
+  align-items: center;
+}
+
+.app__content {
+  min-width: 0;
+  max-width: 745px;
+}
+
+.app__title {
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.app__features {
+  margin-top: 42px;
+  display: grid;
+  gap: 18px;
+}
+
+.app__feature {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.app__feature-content {
+  min-width: 0;
+}
+
+.app__feature-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: var(--brand);
+  color: var(--surface);
+  font-size: 32px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.app__feature-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.app__feature-description {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1;
+}
+
+.app__video {
+  justify-self: end;
+}
+
+/* ============================================================
+   PACKAGE SECTION
+   Figma: bg #909e7a, rounded 20px
+   ============================================================ */
+.package__container {
+  padding-inline: clamp(26px, 4vw, 52px);
+  position: relative;
+  overflow: hidden;
+}
+
+.package__title {
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--surface);
+  text-align: left;
+}
+
+.package__content {
+  margin-top: 42px;
+  display: grid;
+  grid-template-columns: 479px 1fr;
+  gap: 32px;
+  align-items: end;
+  max-width: 1033px;
+  margin-inline: auto;
+}
+
+.package__main-product {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  height: 524px;
+}
+
+.package__product-image {
+  width: min(100%, 315px);
+  align-self: center;
+}
+
+.package__product-name {
+  margin-top: 20px;
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--brand);
+  align-self: flex-start;
+}
+
+.package__items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+}
+
+.package__item {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  height: 246px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.package__item-icon {
+  flex: 1;
+  display: grid;
+  place-items: center;
+}
+
+.package__item-icon img {
+  max-height: 140px;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.package__item-name {
+  color: var(--brand);
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+/* ============================================================
+   REVIEWS
+   Figma: 3 cards, white rounded-20px, 32px padding
+   ============================================================ */
+.reviews__container {
+  padding-inline: 56px;
+}
+
+.reviews__title {
+  font-size: 48px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--ink);
+}
+
+.reviews__list {
+  margin-top: 42px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 31px;
+}
+
+.reviews__item {
+  height: 100%;
+}
+
+.review-card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 30px 32px;
+  height: 100%;
+}
+
+.review-card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-card__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  object-fit: cover;
+  background: #d9d9d9;
+}
+
+.review-card__author {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.review-card__content {
+  margin-top: 15px;
+}
+
+.review-card__content p {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+/* ============================================================
+   FOOTER
+   Figma: bg #ebe3de, rounded-top 20px
+   ============================================================ */
+.footer {
+  position: relative;
+  margin-top: 76px;
+  background: var(--section-soft);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  overflow: hidden;
+  padding-top: 41px;
+  padding-bottom: 0;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 314px 1fr;
+  gap: 120px;
+  align-items: start;
+}
+
+.footer__brand {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.footer__tagline {
+  max-width: 314px;
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.footer__social {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.footer__social-label {
+  display: block;
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.footer__social-list {
+  display: flex;
+  gap: 20px;
+}
+
+.footer__social-item {
+  flex-shrink: 0;
+}
+
+.footer__social-link {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  transition: opacity 0.2s ease;
+}
+.footer__social-link:hover,
+.footer__social-link:focus-visible {
+  opacity: 0.7;
+}
+
+.footer__social-link img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Footer nav + contact */
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: 52px;
+}
+
+.footer__nav-title {
+  display: none;
+}
+
+.footer__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__nav-link {
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: underline;
+}
+.footer__nav-link:hover,
+.footer__nav-link:focus-visible {
+  color: var(--brand-strong);
+}
+
+.footer__contact {
+  font-style: normal;
+  margin-top: 18px;
+}
+
+.footer__contact-email {
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.footer__bottom {
+  margin-top: 18px;
+  padding-top: 0;
+  padding-bottom: 16px;
+}
+
+.footer__copyright {
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.footer__decoration {
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  width: clamp(300px, 44vw, 669px);
+  pointer-events: none;
+}
+
+/* ============================================================
+
+/* ============================================================
+   MOBILE MENU TOGGLE ANIMATION
+   ============================================================ */
+.header__menu-icon,
+.header__menu-icon::before,
+.header__menu-icon::after {
+  transition: transform 0.25s ease, background-color 0.25s ease, top 0.25s ease;
+}
+
+.header__menu-toggle[aria-expanded="true"] .header__menu-icon {
+  background: transparent;
+}
+.header__menu-toggle[aria-expanded="true"] .header__menu-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.header__menu-toggle[aria-expanded="true"] .header__menu-icon::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* ============================================================
+   RESPONSIVE – Tablet (≤ 1024px)
+   ============================================================ */
+@media (max-width: 1024px) {
+  /* Header */
+  .header__container {
+    gap: 37px;
+  }
+
+  /* Hero */
+  .hero__title {
+    font-size: 48px;
+    letter-spacing: -0.96px;
+  }
+
+  .hero__content {
+    gap: 36px;
+  }
+
+  /* Problems */
+  .problems__title {
+    font-size: 32px;
+  }
+
+  .problems__list {
+    gap: 24px;
+  }
+
+  .problems__item {
+    padding: 24px;
+  }
+
+  .problems__item-title {
+    font-size: 24px;
+  }
+
+  .problems__item-description {
+    font-size: 14px;
+  }
+
+  /* How it works */
+  .how-it-works__title {
+    font-size: 32px;
+  }
+
+  .how-it-works__subtitle {
+    font-size: 24px;
+  }
+
+  .how-it-works__step-text {
+    font-size: 14px;
+  }
+
+  /* Features */
+  .features__title {
+    font-size: 24px;
+  }
+
+  .features__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .features__item {
+    min-height: auto;
+  }
+
+  .features__item-title {
+    font-size: 24px;
+  }
+
+  .features__item-description {
+    font-size: 14px;
+  }
+
+  /* App */
+  .app__title {
+    font-size: 32px;
+  }
+
+  .app__feature-title {
+    font-size: 20px;
+  }
+
+  .app__feature-description {
+    font-size: 14px;
+  }
+
+  /* Package */
+  .package__title {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .package__content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .package__main-product {
+    height: auto;
+  }
+
+  .package__item {
+    height: 170px;
+  }
+
+  .package__item-name {
+    font-size: 16px;
+  }
+
+  /* Reviews */
+  .reviews__title {
+    font-size: 24px;
+  }
+
+  .reviews__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .reviews__container {
+    padding-inline: 20px;
+  }
+
+  .review-card__content p {
+    font-size: 14px;
+  }
+
+  .review-card__author {
+    font-size: 20px;
+  }
+
+  /* Footer */
+  .footer__container {
+    gap: 60px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE – Mobile (≤ 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+  /* --- Header --- */
+  .header {
+    padding-top: 21px;
+    position: absolute;
+    z-index: 10;
+  }
+
+  .header__container {
+    justify-content: space-between;
+  }
+
+  .header__logo-image {
+    width: 68px;
+  }
+
+  .header__nav {
+    display: none;
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 1000;
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    padding: 48px 40px 24px;
+    min-width: 213px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .header__nav.is-open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header__nav-list {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .header__nav-item + .header__nav-item::before {
+    display: none;
+  }
+
+  .header__menu-toggle {
+    display: inline-grid;
+    place-items: center;
+    position: relative;
+    z-index: 1001;
+  }
+
+  /* --- Hero --- */
+  .hero {
+    margin-top: 0;
+  }
+
+  .hero__container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-top: 0;
+  }
+
+  .hero__image {
+    order: -1;
+    justify-self: center;
+    width: min(100%, 351px);
+    margin-top: 0;
+  }
+
+  .hero__content {
+    gap: 24px;
+    align-items: flex-start;
+    max-width: 100%;
+    padding-top: 72px;
+  }
+
+  .hero__title {
+    font-size: 32px;
+    letter-spacing: -0.64px;
+  }
+
+  .hero__description {
+    font-size: 14px;
+    letter-spacing: 0.14px;
+    max-width: 348px;
+  }
+
+  .button--primary {
+    font-size: 21px;
+    padding: 10px 25px;
+  }
+
+  .hero__cta {
+    align-self: center;
+    margin-top: 0;
+  }
+
+  /* --- Sections spacing --- */
+  .problems,
+  .package,
+  .features {
+    margin-top: 40px;
+    padding: 36px 0;
+  }
+
+  .package {
+    margin-top: 0;
+  }
+
+  .package {
+    padding-block: 20px;
+  }
+
+  .how-it-works,
+  .app,
+  .reviews {
+    margin-top: 40px;
+  }
+
+  .app {
+    margin-top: 0;
+  }
+
+  .app + .reviews {
+    margin-top: 0;
+  }
+
+  /* --- Problems --- */
+  .problems__container {
+    padding-inline: 24px;
+  }
+
+  .problems__title {
+    font-size: 24px;
+  }
+
+  .problems__list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .problems__item {
+    padding: 24px;
+  }
+
+  .problems__item-title {
+    font-size: 24px;
+  }
+
+  .problems__item-description {
+    font-size: 14px;
+  }
+
+  /* --- How it works --- */
+  .how-it-works__container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .how-it-works__content {
+    display: contents;
+  }
+
+  .how-it-works__title {
+    font-size: 24px;
+    order: 1;
+  }
+
+  .how-it-works__image {
+    order: 2;
+  }
+
+  .how-it-works__subtitle {
+    font-size: 20px;
+    margin-top: 0;
+    order: 3;
+  }
+
+  .how-it-works__steps {
+    margin-top: -12px;
+    order: 4;
+  }
+
+  .how-it-works__step-text {
+    font-size: 14px;
+  }
+
+  /* --- Features --- */
+  .features {
+    padding-block: 42px;
+  }
+
+  .features__container {
+    padding-inline: 24px;
+  }
+
+  .features__title {
+    font-size: 24px;
+  }
+
+  .features__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .features__item {
+    min-height: auto;
+    padding: 24px;
+  }
+
+  .features__item-title {
+    font-size: 24px;
+  }
+
+  .features__item-description {
+    font-size: 14px;
+  }
+
+  /* --- App --- */
+  .app {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .app__container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .app__title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .app__content {
+    max-width: 100%;
+  }
+
+  .app__video {
+    order: -1;
+    justify-self: center;
+  }
+
+  .app__features {
+    gap: 18px;
+  }
+
+  .app__feature-title {
+    font-size: 20px;
+  }
+
+  .app__feature-description {
+    font-size: 14px;
+  }
+
+  /* --- Package --- */
+  .package__container {
+    padding-inline: 28px;
+  }
+
+  .package__title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .package__content {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .package__main-product {
+    height: auto;
+    border-radius: var(--radius-md);
+  }
+
+  .package__product-name {
+    font-size: 24px;
+  }
+
+  .package__items {
+    gap: 16px;
+  }
+
+  .package__item {
+    height: auto;
+    min-height: 170px;
+    border-radius: var(--radius-md);
+  }
+
+  .package__item-name {
+    font-size: 16px;
+  }
+
+  .package__item-icon img {
+    max-height: 110px;
+  }
+
+  /* --- Reviews --- */
+  .reviews__container {
+    padding-inline: 0;
+  }
+
+  .reviews__title {
+    font-size: 24px;
+  }
+
+  .reviews__list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 32px;
+    max-width: 332px;
+    margin-inline: auto;
+  }
+
+  .review-card {
+    padding: 20px 24px 24px;
+  }
+
+  .review-card__author {
+    font-size: 20px;
+  }
+
+  .review-card__content p {
+    font-size: 14px;
+  }
+
+  /* --- Footer --- */
+  .footer {
+    margin-top: 40px;
+    padding-top: 29px;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+
+  .footer__logo-image {
+    width: 157px;
+  }
+
+  .footer__container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .footer__nav {
+    padding-top: 0;
+    gap: 8px;
+  }
+
+  .footer__tagline {
+    font-size: 14px;
+    max-width: 235px;
+  }
+
+  .footer__social-label {
+    font-size: 14px;
+  }
+
+  .footer__nav-link {
+    font-size: 18px;
+  }
+
+  .footer__contact-email {
+    font-size: 14px;
+  }
+
+  .footer__copyright {
+    font-size: 14px;
+  }
+
+  .footer__decoration {
+    width: 250px;
+    right: -100px;
+    top: auto;
+    bottom: -80px;
+    opacity: 0.7;
+  }
+}

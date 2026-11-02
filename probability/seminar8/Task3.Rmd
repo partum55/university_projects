@@ -1,0 +1,123 @@
+---
+title: "Task3"
+output: html_document
+---
+
+```{r}
+set.seed(29)
+
+n <- 1000
+lambda <- 1
+
+mu <- 1 / lambda
+sigma <- 1 / lambda
+
+rho <- (12 / exp(1)) - 2
+c <- 0.4748
+
+cat("For n = 4\n")
+par(mfrow = c(2, 2))
+n1 <- 4
+samples_n4 <- matrix(rexp(n * n1, rate = lambda), nrow = n, ncol = n1)
+sample_means_n4 <- rowMeans(samples_n4)
+
+# sample means
+hist(sample_means_n4,
+     probability = TRUE,
+     breaks = 30,
+     main = "Histogram of Sample Means (n=4) and PDF N(1, 1/4)",
+     xlab = "Sample Mean",
+     ylab = "Density",
+     col = "lightblue")
+
+# curve
+curve(dnorm(x, mean = mu, sd = sigma / sqrt(n1)),
+      add = TRUE,
+      col = "red",
+      lwd = 2)
+legend("topright", legend = "N(1, 1/4) PDF", col = "red", lwd = 2, bty = "n")
+
+zn_n4 <- (sample_means_n4 - mu) / (sigma / sqrt(n1))
+plot(ecdf(zn_n4),
+     main = "ECDF standart for (n=4)",
+     xlab = "t",
+     ylab = "F(t)",
+     col = "blue",
+     do.points = FALSE,
+     verticals = TRUE)
+
+# set a curve
+curve(pnorm(x, 0, 1),
+      add = TRUE,
+      col = "red",
+      lwd = 2)
+legend("bottomright", legend = c("ECDF (n=4)", "Φ(t)"), col = c("blue", "red"), lwd = 2, bty = "n")
+
+# count d = max |F_n(t) - F(t)|
+ks_test_n4 <- ks.test(zn_n4, "pnorm")
+d_n4 <- ks_test_n4$statistic
+
+be_bound_n4 <- (c * rho) / (sigma^3 * sqrt(n1))
+cat(sprintf("n = 4: Maximum variance d = %.4f\n", d_n4))
+cat(sprintf("n = 4: Barry-Esseen border = %.4f\n", be_bound_n4))
+cat(sprintf("is d < Barry-Esseen border? %s\n", d_n4 < be_bound_n4))
+
+# repeat for n = 100 ---
+cat("\nFor n = 100\n")
+n2 <- 100
+# n (1000), mu, sigma, c, and rho are already defined from your previous chunk
+
+# generate N=1000 samples of size n=100 and get their means
+samples_n100 <- matrix(rexp(n * n2, rate = lambda), nrow = n, ncol = n2)
+sample_means_n100 <- rowMeans(samples_n100)
+
+# plot histogram of sample means
+hist(sample_means_n100,
+     probability = TRUE,
+     breaks = 30,
+     main = "Histogram of Sample Means (n=100) and PDF N(1, 1/100)",
+     xlab = "Sample Mean",
+     ylab = "Density",
+     col = "lightgreen")
+
+# overlay the theoretical N(1, 1/100) PDF curve
+curve(dnorm(x, mean = mu, sd = sigma / sqrt(n2)),
+      add = TRUE,
+      col = "red",
+      lwd = 2)
+legend("topright", legend = "N(1, 1/100) PDF", col = "red", lwd = 2, bty = "n")
+
+# standardize the sample means
+zn_n100 <- (sample_means_n100 - mu) / (sigma / sqrt(n2))
+
+# plot the empirical CDF (ECDF) of the standardized means
+plot(ecdf(zn_n100),
+     main = "ECDF standardized for (n=100)",
+     xlab = "t",
+     ylab = "F(t)",
+     col = "blue",
+     do.points = FALSE,
+     verticals = TRUE)
+
+# overlay the standard normal CDF Φ(t)
+curve(pnorm(x, 0, 1),
+      add = TRUE,
+      col = "red",
+      lwd = 2)
+legend("bottomright", legend = c("ECDF (n=100)", "Φ(t)"), col = c("blue", "red"), lwd = 2, bty = "n")
+
+# compute d = max |F_n(t) - Φ(t)| (Kolmogorov-Smirnov statistic)
+ks_test_n100 <- ks.test(zn_n100, "pnorm")
+d_n100 <- ks_test_n100$statistic
+
+# compute the Berry-Esseen theoretical bound
+be_bound_n100 <- (c * rho) / (sigma^3 * sqrt(n2))
+
+# print the results for n=100
+cat(sprintf("n = 100: Maximum discrepancy d = %.4f\n", d_n100))
+cat(sprintf("n = 100: Berry-Esseen bound = %.4f\n", be_bound_n100))
+cat(sprintf("is d < Berry-Esseen bound? %s\n", d_n100 < be_bound_n100))
+
+# reset the plotting layout
+par(mfrow = c(1, 1))
+```

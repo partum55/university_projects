@@ -1,0 +1,29 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.idea/
+
+# Django stuff
+db.sqlite3
+backend/staticfiles/
+
+# Node/React
+frontend/node_modules/
+frontend/build/
+
+# Environment and secrets
+.env
+*.env
+
+# Git
+.git/
+.gitignore
+
+# Editor/temp files
+.vscode/
+.DS_Store
+
+# Docker related files (we'll use specific files)
+docker-compose*.yml
+docker-compose*.yaml

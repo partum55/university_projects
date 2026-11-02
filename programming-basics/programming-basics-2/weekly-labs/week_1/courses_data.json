@@ -1,0 +1,26 @@
+{
+    "Responsible AI": {
+        "capacity": 25,
+        "prerequisites": {
+            "Fundamentals of Programming": 40,
+            "Linear Algebra": 30,
+            "Probability and Statistics": 30
+            }
+        },
+    "AI, Decision Making, and Society": {
+        "capacity": 10,
+        "prerequisites": {
+            "Worldview core": 40,
+            "Decision Making": 40,
+            "Fundamentals of Programming": 20
+            }
+    },
+    "Representation, Inference, and Reasoning in AI": {
+        "capacity": 15,
+        "prerequisites": {
+            "Introduction to Algorithms": 40,
+            "Probability and Statistics": 40,
+            "Data Visualisation": 20
+            }
+    }
+}

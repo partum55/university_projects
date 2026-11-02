@@ -1,0 +1,2013 @@
+1. Solve for x: 4x + 3 = 23.
+Answer: 20
+
+2. If f(x) = 2x^2 + 3x + 5, what is f(2)?
+Answer: 19
+
+3. What is sin(30�)?
+Answer: 0.5
+
+4. Find the derivative of f(x) = 3x^2 + 4x at x = 9.
+Answer: 58
+
+5. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+6. What is the area of a triangle with a base of 9 cm and a height of 13 cm?
+Answer: 58.5
+
+7. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+8. Find the 10th term of the arithmetic sequence where the first term is 1 and the common difference is 5.
+Answer: 46
+
+9. Solve the inequality: 5x - 6 < 3.
+Answer: 2
+
+10. What is log_10(1000)?
+Answer: 3
+
+11. Solve for x: 7x + 4 = 39.
+Answer: 35
+
+12. If f(x) = 2x^2 + 3x + 5, what is f(8)?
+Answer: 157
+
+13. What is sin(45�)?
+Answer: 0.7071
+
+14. Find the derivative of f(x) = 3x^2 + 4x at x = 10.
+Answer: 64
+
+15. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+16. What is the area of a triangle with a base of 8 cm and a height of 15 cm?
+Answer: 60.0
+
+17. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+18. Find the 10th term of the arithmetic sequence where the first term is 3 and the common difference is 5.
+Answer: 48
+
+19. Solve the inequality: 2x - 3 < 3.
+Answer: 3
+
+20. What is log_10(1000)?
+Answer: 3
+
+21. Solve for x: 6x + 5 = 35.
+Answer: 30
+
+22. If f(x) = 2x^2 + 3x + 5, what is f(8)?
+Answer: 157
+
+23. What is sin(30�)?
+Answer: 0.5
+
+24. Find the derivative of f(x) = 3x^2 + 4x at x = 3.
+Answer: 22
+
+25. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+26. What is the area of a triangle with a base of 6 cm and a height of 5 cm?
+Answer: 15.0
+
+27. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+28. Find the 10th term of the arithmetic sequence where the first term is 1 and the common difference is 3.
+Answer: 28
+
+29. Solve the inequality: 4x - 10 < 3.
+Answer: 3
+
+30. What is log_10(1000)?
+Answer: 3
+
+31. Solve for x: 1x + 3 = 8.
+Answer: 5
+
+32. If f(x) = 2x^2 + 3x + 5, what is f(2)?
+Answer: 19
+
+33. What is sin(30�)?
+Answer: 0.5
+
+34. Find the derivative of f(x) = 3x^2 + 4x at x = 7.
+Answer: 46
+
+35. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+36. What is the area of a triangle with a base of 13 cm and a height of 13 cm?
+Answer: 84.5
+
+37. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+38. Find the 10th term of the arithmetic sequence where the first term is 6 and the common difference is 3.
+Answer: 33
+
+39. Solve the inequality: 5x - 6 < 3.
+Answer: 2
+
+40. What is log_10(1000)?
+Answer: 3
+
+41. Solve for x: 2x + 3 = 13.
+Answer: 10
+
+42. If f(x) = 2x^2 + 3x + 5, what is f(5)?
+Answer: 70
+
+43. What is sin(60�)?
+Answer: 0.866
+
+44. Find the derivative of f(x) = 3x^2 + 4x at x = 10.
+Answer: 64
+
+45. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+46. What is the area of a triangle with a base of 10 cm and a height of 6 cm?
+Answer: 30.0
+
+47. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+48. Find the 10th term of the arithmetic sequence where the first term is 8 and the common difference is 1.
+Answer: 17
+
+49. Solve the inequality: 5x - 1 < 3.
+Answer: 1
+
+50. What is log_10(1000)?
+Answer: 3
+
+51. Solve for x: 2x + 6 = 16.
+Answer: 10
+
+52. If f(x) = 2x^2 + 3x + 5, what is f(6)?
+Answer: 95
+
+53. What is sin(30�)?
+Answer: 0.5
+
+54. Find the derivative of f(x) = 3x^2 + 4x at x = 9.
+Answer: 58
+
+55. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+56. What is the area of a triangle with a base of 11 cm and a height of 14 cm?
+Answer: 77.0
+
+57. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+58. Find the 10th term of the arithmetic sequence where the first term is 10 and the common difference is 2.
+Answer: 28
+
+59. Solve the inequality: 4x - 2 < 3.
+Answer: 1
+
+60. What is log_10(1000)?
+Answer: 3
+
+61. Solve for x: 3x + 9 = 24.
+Answer: 15
+
+62. If f(x) = 2x^2 + 3x + 5, what is f(7)?
+Answer: 124
+
+63. What is sin(45�)?
+Answer: 0.7071
+
+64. Find the derivative of f(x) = 3x^2 + 4x at x = 8.
+Answer: 52
+
+65. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+66. What is the area of a triangle with a base of 13 cm and a height of 14 cm?
+Answer: 91.0
+
+67. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+68. Find the 10th term of the arithmetic sequence where the first term is 5 and the common difference is 1.
+Answer: 14
+
+69. Solve the inequality: 2x - 8 < 3.
+Answer: 6
+
+70. What is log_10(1000)?
+Answer: 3
+
+71. Solve for x: 2x + 5 = 15.
+Answer: 10
+
+72. If f(x) = 2x^2 + 3x + 5, what is f(1)?
+Answer: 10
+
+73. What is sin(30�)?
+Answer: 0.5
+
+74. Find the derivative of f(x) = 3x^2 + 4x at x = 9.
+Answer: 58
+
+75. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+76. What is the area of a triangle with a base of 5 cm and a height of 13 cm?
+Answer: 32.5
+
+77. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+78. Find the 10th term of the arithmetic sequence where the first term is 8 and the common difference is 1.
+Answer: 17
+
+79. Solve the inequality: 2x - 3 < 3.
+Answer: 3
+
+80. What is log_10(1000)?
+Answer: 3
+
+81. Solve for x: 8x + 9 = 49.
+Answer: 40
+
+82. If f(x) = 2x^2 + 3x + 5, what is f(1)?
+Answer: 10
+
+83. What is sin(45�)?
+Answer: 0.7071
+
+84. Find the derivative of f(x) = 3x^2 + 4x at x = 4.
+Answer: 28
+
+85. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+86. What is the area of a triangle with a base of 10 cm and a height of 14 cm?
+Answer: 70.0
+
+87. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+88. Find the 10th term of the arithmetic sequence where the first term is 7 and the common difference is 2.
+Answer: 25
+
+89. Solve the inequality: 5x - 6 < 3.
+Answer: 2
+
+90. What is log_10(1000)?
+Answer: 3
+
+91. Solve for x: 2x + 5 = 15.
+Answer: 10
+
+92. If f(x) = 2x^2 + 3x + 5, what is f(2)?
+Answer: 19
+
+93. What is sin(30�)?
+Answer: 0.5
+
+94. Find the derivative of f(x) = 3x^2 + 4x at x = 5.
+Answer: 34
+
+95. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+96. What is the area of a triangle with a base of 8 cm and a height of 8 cm?
+Answer: 32.0
+
+97. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+98. Find the 10th term of the arithmetic sequence where the first term is 6 and the common difference is 2.
+Answer: 24
+
+99. Solve the inequality: 2x - 7 < 3.
+Answer: 5
+
+100. What is log_10(1000)?
+Answer: 3
+
+101. Solve for x: 5x + 1 = 26.
+Answer: 25
+
+102. If f(x) = 2x^2 + 3x + 5, what is f(1)?
+Answer: 10
+
+103. What is sin(45�)?
+Answer: 0.7071
+
+104. Find the derivative of f(x) = 3x^2 + 4x at x = 3.
+Answer: 22
+
+105. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+106. What is the area of a triangle with a base of 10 cm and a height of 12 cm?
+Answer: 60.0
+
+107. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+108. Find the 10th term of the arithmetic sequence where the first term is 7 and the common difference is 3.
+Answer: 34
+
+109. Solve the inequality: 2x - 7 < 3.
+Answer: 5
+
+110. What is log_10(1000)?
+Answer: 3
+
+111. Solve for x: 8x + 4 = 44.
+Answer: 40
+
+112. If f(x) = 2x^2 + 3x + 5, what is f(10)?
+Answer: 235
+
+113. What is sin(30�)?
+Answer: 0.5
+
+114. Find the derivative of f(x) = 3x^2 + 4x at x = 10.
+Answer: 64
+
+115. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+116. What is the area of a triangle with a base of 8 cm and a height of 15 cm?
+Answer: 60.0
+
+117. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+118. Find the 10th term of the arithmetic sequence where the first term is 6 and the common difference is 3.
+Answer: 33
+
+119. Solve the inequality: 4x - 4 < 3.
+Answer: 2
+
+120. What is log_10(1000)?
+Answer: 3
+
+121. Solve for x: 2x + 5 = 15.
+Answer: 10
+
+122. If f(x) = 2x^2 + 3x + 5, what is f(1)?
+Answer: 10
+
+123. What is sin(30�)?
+Answer: 0.5
+
+124. Find the derivative of f(x) = 3x^2 + 4x at x = 7.
+Answer: 46
+
+125. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+126. What is the area of a triangle with a base of 5 cm and a height of 15 cm?
+Answer: 37.5
+
+127. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+128. Find the 10th term of the arithmetic sequence where the first term is 5 and the common difference is 3.
+Answer: 32
+
+129. Solve the inequality: 3x - 5 < 3.
+Answer: 3
+
+130. What is log_10(1000)?
+Answer: 3
+
+131. Solve for x: 3x + 10 = 25.
+Answer: 15
+
+132. If f(x) = 2x^2 + 3x + 5, what is f(9)?
+Answer: 194
+
+133. What is sin(60�)?
+Answer: 0.866
+
+134. Find the derivative of f(x) = 3x^2 + 4x at x = 2.
+Answer: 16
+
+135. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+136. What is the area of a triangle with a base of 15 cm and a height of 15 cm?
+Answer: 112.5
+
+137. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+138. Find the 10th term of the arithmetic sequence where the first term is 7 and the common difference is 3.
+Answer: 34
+
+139. Solve the inequality: 5x - 7 < 3.
+Answer: 2
+
+140. What is log_10(1000)?
+Answer: 3
+
+141. Solve for x: 7x + 10 = 45.
+Answer: 35
+
+142. If f(x) = 2x^2 + 3x + 5, what is f(7)?
+Answer: 124
+
+143. What is sin(45�)?
+Answer: 0.7071
+
+144. Find the derivative of f(x) = 3x^2 + 4x at x = 10.
+Answer: 64
+
+145. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+146. What is the area of a triangle with a base of 9 cm and a height of 12 cm?
+Answer: 54.0
+
+147. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+148. Find the 10th term of the arithmetic sequence where the first term is 2 and the common difference is 3.
+Answer: 29
+
+149. Solve the inequality: 5x - 1 < 3.
+Answer: 1
+
+150. What is log_10(1000)?
+Answer: 3
+
+151. Solve for x: 2x + 9 = 19.
+Answer: 10
+
+152. If f(x) = 2x^2 + 3x + 5, what is f(8)?
+Answer: 157
+
+153. What is sin(30�)?
+Answer: 0.5
+
+154. Find the derivative of f(x) = 3x^2 + 4x at x = 6.
+Answer: 40
+
+155. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+156. What is the area of a triangle with a base of 11 cm and a height of 11 cm?
+Answer: 60.5
+
+157. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+158. Find the 10th term of the arithmetic sequence where the first term is 5 and the common difference is 5.
+Answer: 50
+
+159. Solve the inequality: 4x - 9 < 3.
+Answer: 3
+
+160. What is log_10(1000)?
+Answer: 3
+
+161. Solve for x: 1x + 1 = 6.
+Answer: 5
+
+162. If f(x) = 2x^2 + 3x + 5, what is f(4)?
+Answer: 49
+
+163. What is sin(30�)?
+Answer: 0.5
+
+164. Find the derivative of f(x) = 3x^2 + 4x at x = 6.
+Answer: 40
+
+165. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+166. What is the area of a triangle with a base of 9 cm and a height of 15 cm?
+Answer: 67.5
+
+167. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+168. Find the 10th term of the arithmetic sequence where the first term is 8 and the common difference is 5.
+Answer: 53
+
+169. Solve the inequality: 3x - 2 < 3.
+Answer: 2
+
+170. What is log_10(1000)?
+Answer: 3
+
+171. Solve for x: 5x + 6 = 31.
+Answer: 25
+
+172. If f(x) = 2x^2 + 3x + 5, what is f(1)?
+Answer: 10
+
+173. What is sin(30�)?
+Answer: 0.5
+
+174. Find the derivative of f(x) = 3x^2 + 4x at x = 1.
+Answer: 10
+
+175. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+176. What is the area of a triangle with a base of 13 cm and a height of 10 cm?
+Answer: 65.0
+
+177. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+178. Find the 10th term of the arithmetic sequence where the first term is 1 and the common difference is 5.
+Answer: 46
+
+179. Solve the inequality: 1x - 1 < 3.
+Answer: 4
+
+180. What is log_10(1000)?
+Answer: 3
+
+181. Solve for x: 9x + 7 = 52.
+Answer: 45
+
+182. If f(x) = 2x^2 + 3x + 5, what is f(2)?
+Answer: 19
+
+183. What is sin(30�)?
+Answer: 0.5
+
+184. Find the derivative of f(x) = 3x^2 + 4x at x = 7.
+Answer: 46
+
+185. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+186. What is the area of a triangle with a base of 5 cm and a height of 7 cm?
+Answer: 17.5
+
+187. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+188. Find the 10th term of the arithmetic sequence where the first term is 1 and the common difference is 4.
+Answer: 37
+
+189. Solve the inequality: 1x - 5 < 3.
+Answer: 8
+
+190. What is log_10(1000)?
+Answer: 3
+
+191. Solve for x: 2x + 9 = 19.
+Answer: 10
+
+192. If f(x) = 2x^2 + 3x + 5, what is f(4)?
+Answer: 49
+
+193. What is sin(60�)?
+Answer: 0.866
+
+194. Find the derivative of f(x) = 3x^2 + 4x at x = 4.
+Answer: 28
+
+195. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+196. What is the area of a triangle with a base of 11 cm and a height of 5 cm?
+Answer: 27.5
+
+197. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+198. Find the 10th term of the arithmetic sequence where the first term is 1 and the common difference is 3.
+Answer: 28
+
+199. Solve the inequality: 1x - 5 < 3.
+Answer: 8
+
+200. What is log_10(1000)?
+Answer: 3
+
+201. Solve for x: 1x + 4 = 9.
+Answer: 5
+
+202. If f(x) = 2x^2 + 3x + 5, what is f(3)?
+Answer: 32
+
+203. What is sin(30�)?
+Answer: 0.5
+
+204. Find the derivative of f(x) = 3x^2 + 4x at x = 1.
+Answer: 10
+
+205. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+206. What is the area of a triangle with a base of 5 cm and a height of 11 cm?
+Answer: 27.5
+
+207. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+208. Find the 10th term of the arithmetic sequence where the first term is 2 and the common difference is 3.
+Answer: 29
+
+209. Solve the inequality: 5x - 4 < 3.
+Answer: 1
+
+210. What is log_10(1000)?
+Answer: 3
+
+211. Solve for x: 3x + 4 = 19.
+Answer: 15
+
+212. If f(x) = 2x^2 + 3x + 5, what is f(10)?
+Answer: 235
+
+213. What is sin(45�)?
+Answer: 0.7071
+
+214. Find the derivative of f(x) = 3x^2 + 4x at x = 8.
+Answer: 52
+
+215. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+216. What is the area of a triangle with a base of 11 cm and a height of 13 cm?
+Answer: 71.5
+
+217. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+218. Find the 10th term of the arithmetic sequence where the first term is 3 and the common difference is 4.
+Answer: 39
+
+219. Solve the inequality: 1x - 9 < 3.
+Answer: 12
+
+220. What is log_10(1000)?
+Answer: 3
+
+221. Solve for x: 7x + 2 = 37.
+Answer: 35
+
+222. If f(x) = 2x^2 + 3x + 5, what is f(3)?
+Answer: 32
+
+223. What is sin(30�)?
+Answer: 0.5
+
+224. Find the derivative of f(x) = 3x^2 + 4x at x = 2.
+Answer: 16
+
+225. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+226. What is the area of a triangle with a base of 14 cm and a height of 14 cm?
+Answer: 98.0
+
+227. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+228. Find the 10th term of the arithmetic sequence where the first term is 7 and the common difference is 1.
+Answer: 16
+
+229. Solve the inequality: 2x - 8 < 3.
+Answer: 6
+
+230. What is log_10(1000)?
+Answer: 3
+
+231. Solve for x: 5x + 6 = 31.
+Answer: 25
+
+232. If f(x) = 2x^2 + 3x + 5, what is f(10)?
+Answer: 235
+
+233. What is sin(30�)?
+Answer: 0.5
+
+234. Find the derivative of f(x) = 3x^2 + 4x at x = 9.
+Answer: 58
+
+235. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+236. What is the area of a triangle with a base of 9 cm and a height of 9 cm?
+Answer: 40.5
+
+237. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+238. Find the 10th term of the arithmetic sequence where the first term is 2 and the common difference is 1.
+Answer: 11
+
+239. Solve the inequality: 4x - 8 < 3.
+Answer: 3
+
+240. What is log_10(1000)?
+Answer: 3
+
+241. Solve for x: 4x + 8 = 28.
+Answer: 20
+
+242. If f(x) = 2x^2 + 3x + 5, what is f(2)?
+Answer: 19
+
+243. What is sin(45�)?
+Answer: 0.7071
+
+244. Find the derivative of f(x) = 3x^2 + 4x at x = 6.
+Answer: 40
+
+245. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+246. What is the area of a triangle with a base of 5 cm and a height of 9 cm?
+Answer: 22.5
+
+247. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+248. Find the 10th term of the arithmetic sequence where the first term is 10 and the common difference is 4.
+Answer: 46
+
+249. Solve the inequality: 3x - 5 < 3.
+Answer: 3
+
+250. What is log_10(1000)?
+Answer: 3
+
+251. Solve for x: 5x + 5 = 30.
+Answer: 25
+
+252. If f(x) = 2x^2 + 3x + 5, what is f(3)?
+Answer: 32
+
+253. What is sin(45�)?
+Answer: 0.7071
+
+254. Find the derivative of f(x) = 3x^2 + 4x at x = 2.
+Answer: 16
+
+255. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+256. What is the area of a triangle with a base of 13 cm and a height of 5 cm?
+Answer: 32.5
+
+257. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+258. Find the 10th term of the arithmetic sequence where the first term is 4 and the common difference is 5.
+Answer: 49
+
+259. Solve the inequality: 4x - 7 < 3.
+Answer: 2
+
+260. What is log_10(1000)?
+Answer: 3
+
+261. Solve for x: 8x + 8 = 48.
+Answer: 40
+
+262. If f(x) = 2x^2 + 3x + 5, what is f(3)?
+Answer: 32
+
+263. What is sin(60�)?
+Answer: 0.866
+
+264. Find the derivative of f(x) = 3x^2 + 4x at x = 8.
+Answer: 52
+
+265. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+266. What is the area of a triangle with a base of 5 cm and a height of 10 cm?
+Answer: 25.0
+
+267. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+268. Find the 10th term of the arithmetic sequence where the first term is 2 and the common difference is 5.
+Answer: 47
+
+269. Solve the inequality: 2x - 1 < 3.
+Answer: 2
+
+270. What is log_10(1000)?
+Answer: 3
+
+271. Solve for x: 7x + 9 = 44.
+Answer: 35
+
+272. If f(x) = 2x^2 + 3x + 5, what is f(2)?
+Answer: 19
+
+273. What is sin(30�)?
+Answer: 0.5
+
+274. Find the derivative of f(x) = 3x^2 + 4x at x = 5.
+Answer: 34
+
+275. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+276. What is the area of a triangle with a base of 15 cm and a height of 6 cm?
+Answer: 45.0
+
+277. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+278. Find the 10th term of the arithmetic sequence where the first term is 6 and the common difference is 2.
+Answer: 24
+
+279. Solve the inequality: 5x - 10 < 3.
+Answer: 3
+
+280. What is log_10(1000)?
+Answer: 3
+
+281. Solve for x: 6x + 9 = 39.
+Answer: 30
+
+282. If f(x) = 2x^2 + 3x + 5, what is f(4)?
+Answer: 49
+
+283. What is sin(60�)?
+Answer: 0.866
+
+284. Find the derivative of f(x) = 3x^2 + 4x at x = 7.
+Answer: 46
+
+285. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+286. What is the area of a triangle with a base of 10 cm and a height of 6 cm?
+Answer: 30.0
+
+287. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+288. Find the 10th term of the arithmetic sequence where the first term is 4 and the common difference is 4.
+Answer: 40
+
+289. Solve the inequality: 1x - 2 < 3.
+Answer: 5
+
+290. What is log_10(1000)?
+Answer: 3
+
+291. Solve for x: 2x + 7 = 17.
+Answer: 10
+
+292. If f(x) = 2x^2 + 3x + 5, what is f(9)?
+Answer: 194
+
+293. What is sin(60�)?
+Answer: 0.866
+
+294. Find the derivative of f(x) = 3x^2 + 4x at x = 10.
+Answer: 64
+
+295. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+296. What is the area of a triangle with a base of 12 cm and a height of 13 cm?
+Answer: 78.0
+
+297. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+298. Find the 10th term of the arithmetic sequence where the first term is 10 and the common difference is 2.
+Answer: 28
+
+299. Solve the inequality: 3x - 6 < 3.
+Answer: 3
+
+300. What is log_10(1000)?
+Answer: 3
+
+301. Solve for x: 4x + 10 = 30.
+Answer: 20
+
+302. If f(x) = 2x^2 + 3x + 5, what is f(2)?
+Answer: 19
+
+303. What is sin(45�)?
+Answer: 0.7071
+
+304. Find the derivative of f(x) = 3x^2 + 4x at x = 6.
+Answer: 40
+
+305. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+306. What is the area of a triangle with a base of 11 cm and a height of 11 cm?
+Answer: 60.5
+
+307. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+308. Find the 10th term of the arithmetic sequence where the first term is 5 and the common difference is 1.
+Answer: 14
+
+309. Solve the inequality: 3x - 10 < 3.
+Answer: 4
+
+310. What is log_10(1000)?
+Answer: 3
+
+311. Solve for x: 2x + 4 = 14.
+Answer: 10
+
+312. If f(x) = 2x^2 + 3x + 5, what is f(7)?
+Answer: 124
+
+313. What is sin(45�)?
+Answer: 0.7071
+
+314. Find the derivative of f(x) = 3x^2 + 4x at x = 3.
+Answer: 22
+
+315. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+316. What is the area of a triangle with a base of 12 cm and a height of 10 cm?
+Answer: 60.0
+
+317. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+318. Find the 10th term of the arithmetic sequence where the first term is 5 and the common difference is 4.
+Answer: 41
+
+319. Solve the inequality: 5x - 2 < 3.
+Answer: 1
+
+320. What is log_10(1000)?
+Answer: 3
+
+321. Solve for x: 4x + 2 = 22.
+Answer: 20
+
+322. If f(x) = 2x^2 + 3x + 5, what is f(4)?
+Answer: 49
+
+323. What is sin(60�)?
+Answer: 0.866
+
+324. Find the derivative of f(x) = 3x^2 + 4x at x = 5.
+Answer: 34
+
+325. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+326. What is the area of a triangle with a base of 5 cm and a height of 15 cm?
+Answer: 37.5
+
+327. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+328. Find the 10th term of the arithmetic sequence where the first term is 1 and the common difference is 2.
+Answer: 19
+
+329. Solve the inequality: 2x - 9 < 3.
+Answer: 6
+
+330. What is log_10(1000)?
+Answer: 3
+
+331. Solve for x: 7x + 3 = 38.
+Answer: 35
+
+332. If f(x) = 2x^2 + 3x + 5, what is f(4)?
+Answer: 49
+
+333. What is sin(60�)?
+Answer: 0.866
+
+334. Find the derivative of f(x) = 3x^2 + 4x at x = 10.
+Answer: 64
+
+335. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+336. What is the area of a triangle with a base of 7 cm and a height of 15 cm?
+Answer: 52.5
+
+337. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+338. Find the 10th term of the arithmetic sequence where the first term is 6 and the common difference is 4.
+Answer: 42
+
+339. Solve the inequality: 1x - 6 < 3.
+Answer: 9
+
+340. What is log_10(1000)?
+Answer: 3
+
+341. Solve for x: 8x + 2 = 42.
+Answer: 40
+
+342. If f(x) = 2x^2 + 3x + 5, what is f(7)?
+Answer: 124
+
+343. What is sin(45�)?
+Answer: 0.7071
+
+344. Find the derivative of f(x) = 3x^2 + 4x at x = 3.
+Answer: 22
+
+345. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+346. What is the area of a triangle with a base of 11 cm and a height of 14 cm?
+Answer: 77.0
+
+347. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+348. Find the 10th term of the arithmetic sequence where the first term is 3 and the common difference is 5.
+Answer: 48
+
+349. Solve the inequality: 2x - 7 < 3.
+Answer: 5
+
+350. What is log_10(1000)?
+Answer: 3
+
+351. Solve for x: 4x + 2 = 22.
+Answer: 20
+
+352. If f(x) = 2x^2 + 3x + 5, what is f(3)?
+Answer: 32
+
+353. What is sin(60�)?
+Answer: 0.866
+
+354. Find the derivative of f(x) = 3x^2 + 4x at x = 6.
+Answer: 40
+
+355. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+356. What is the area of a triangle with a base of 7 cm and a height of 7 cm?
+Answer: 24.5
+
+357. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+358. Find the 10th term of the arithmetic sequence where the first term is 4 and the common difference is 4.
+Answer: 40
+
+359. Solve the inequality: 4x - 8 < 3.
+Answer: 3
+
+360. What is log_10(1000)?
+Answer: 3
+
+361. Solve for x: 1x + 2 = 7.
+Answer: 5
+
+362. If f(x) = 2x^2 + 3x + 5, what is f(2)?
+Answer: 19
+
+363. What is sin(45�)?
+Answer: 0.7071
+
+364. Find the derivative of f(x) = 3x^2 + 4x at x = 9.
+Answer: 58
+
+365. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+366. What is the area of a triangle with a base of 10 cm and a height of 13 cm?
+Answer: 65.0
+
+367. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+368. Find the 10th term of the arithmetic sequence where the first term is 9 and the common difference is 5.
+Answer: 54
+
+369. Solve the inequality: 1x - 1 < 3.
+Answer: 4
+
+370. What is log_10(1000)?
+Answer: 3
+
+371. Solve for x: 10x + 1 = 51.
+Answer: 50
+
+372. If f(x) = 2x^2 + 3x + 5, what is f(5)?
+Answer: 70
+
+373. What is sin(30�)?
+Answer: 0.5
+
+374. Find the derivative of f(x) = 3x^2 + 4x at x = 2.
+Answer: 16
+
+375. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+376. What is the area of a triangle with a base of 13 cm and a height of 6 cm?
+Answer: 39.0
+
+377. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+378. Find the 10th term of the arithmetic sequence where the first term is 2 and the common difference is 5.
+Answer: 47
+
+379. Solve the inequality: 4x - 8 < 3.
+Answer: 3
+
+380. What is log_10(1000)?
+Answer: 3
+
+381. Solve for x: 8x + 6 = 46.
+Answer: 40
+
+382. If f(x) = 2x^2 + 3x + 5, what is f(4)?
+Answer: 49
+
+383. What is sin(45�)?
+Answer: 0.7071
+
+384. Find the derivative of f(x) = 3x^2 + 4x at x = 2.
+Answer: 16
+
+385. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+386. What is the area of a triangle with a base of 12 cm and a height of 7 cm?
+Answer: 42.0
+
+387. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+388. Find the 10th term of the arithmetic sequence where the first term is 10 and the common difference is 4.
+Answer: 46
+
+389. Solve the inequality: 3x - 8 < 3.
+Answer: 4
+
+390. What is log_10(1000)?
+Answer: 3
+
+391. Solve for x: 8x + 9 = 49.
+Answer: 40
+
+392. If f(x) = 2x^2 + 3x + 5, what is f(3)?
+Answer: 32
+
+393. What is sin(45�)?
+Answer: 0.7071
+
+394. Find the derivative of f(x) = 3x^2 + 4x at x = 4.
+Answer: 28
+
+395. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+396. What is the area of a triangle with a base of 15 cm and a height of 5 cm?
+Answer: 37.5
+
+397. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+398. Find the 10th term of the arithmetic sequence where the first term is 6 and the common difference is 1.
+Answer: 15
+
+399. Solve the inequality: 4x - 3 < 3.
+Answer: 2
+
+400. What is log_10(1000)?
+Answer: 3
+
+401. Solve for x: 9x + 4 = 49.
+Answer: 45
+
+402. If f(x) = 2x^2 + 3x + 5, what is f(3)?
+Answer: 32
+
+403. What is sin(45�)?
+Answer: 0.7071
+
+404. Find the derivative of f(x) = 3x^2 + 4x at x = 1.
+Answer: 10
+
+405. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+406. What is the area of a triangle with a base of 6 cm and a height of 6 cm?
+Answer: 18.0
+
+407. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+408. Find the 10th term of the arithmetic sequence where the first term is 1 and the common difference is 3.
+Answer: 28
+
+409. Solve the inequality: 4x - 1 < 3.
+Answer: 1
+
+410. What is log_10(1000)?
+Answer: 3
+
+411. Solve for x: 7x + 4 = 39.
+Answer: 35
+
+412. If f(x) = 2x^2 + 3x + 5, what is f(3)?
+Answer: 32
+
+413. What is sin(30�)?
+Answer: 0.5
+
+414. Find the derivative of f(x) = 3x^2 + 4x at x = 1.
+Answer: 10
+
+415. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+416. What is the area of a triangle with a base of 13 cm and a height of 7 cm?
+Answer: 45.5
+
+417. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+418. Find the 10th term of the arithmetic sequence where the first term is 3 and the common difference is 1.
+Answer: 12
+
+419. Solve the inequality: 4x - 8 < 3.
+Answer: 3
+
+420. What is log_10(1000)?
+Answer: 3
+
+421. Solve for x: 9x + 6 = 51.
+Answer: 45
+
+422. If f(x) = 2x^2 + 3x + 5, what is f(3)?
+Answer: 32
+
+423. What is sin(30�)?
+Answer: 0.5
+
+424. Find the derivative of f(x) = 3x^2 + 4x at x = 10.
+Answer: 64
+
+425. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+426. What is the area of a triangle with a base of 5 cm and a height of 6 cm?
+Answer: 15.0
+
+427. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+428. Find the 10th term of the arithmetic sequence where the first term is 5 and the common difference is 3.
+Answer: 32
+
+429. Solve the inequality: 3x - 9 < 3.
+Answer: 4
+
+430. What is log_10(1000)?
+Answer: 3
+
+431. Solve for x: 1x + 6 = 11.
+Answer: 5
+
+432. If f(x) = 2x^2 + 3x + 5, what is f(4)?
+Answer: 49
+
+433. What is sin(30�)?
+Answer: 0.5
+
+434. Find the derivative of f(x) = 3x^2 + 4x at x = 10.
+Answer: 64
+
+435. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+436. What is the area of a triangle with a base of 9 cm and a height of 10 cm?
+Answer: 45.0
+
+437. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+438. Find the 10th term of the arithmetic sequence where the first term is 9 and the common difference is 1.
+Answer: 18
+
+439. Solve the inequality: 4x - 2 < 3.
+Answer: 1
+
+440. What is log_10(1000)?
+Answer: 3
+
+441. Solve for x: 4x + 3 = 23.
+Answer: 20
+
+442. If f(x) = 2x^2 + 3x + 5, what is f(9)?
+Answer: 194
+
+443. What is sin(30�)?
+Answer: 0.5
+
+444. Find the derivative of f(x) = 3x^2 + 4x at x = 4.
+Answer: 28
+
+445. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+446. What is the area of a triangle with a base of 11 cm and a height of 8 cm?
+Answer: 44.0
+
+447. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+448. Find the 10th term of the arithmetic sequence where the first term is 10 and the common difference is 3.
+Answer: 37
+
+449. Solve the inequality: 5x - 5 < 3.
+Answer: 2
+
+450. What is log_10(1000)?
+Answer: 3
+
+451. Solve for x: 3x + 2 = 17.
+Answer: 15
+
+452. If f(x) = 2x^2 + 3x + 5, what is f(2)?
+Answer: 19
+
+453. What is sin(30�)?
+Answer: 0.5
+
+454. Find the derivative of f(x) = 3x^2 + 4x at x = 10.
+Answer: 64
+
+455. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+456. What is the area of a triangle with a base of 14 cm and a height of 13 cm?
+Answer: 91.0
+
+457. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+458. Find the 10th term of the arithmetic sequence where the first term is 3 and the common difference is 4.
+Answer: 39
+
+459. Solve the inequality: 2x - 4 < 3.
+Answer: 4
+
+460. What is log_10(1000)?
+Answer: 3
+
+461. Solve for x: 8x + 6 = 46.
+Answer: 40
+
+462. If f(x) = 2x^2 + 3x + 5, what is f(2)?
+Answer: 19
+
+463. What is sin(60�)?
+Answer: 0.866
+
+464. Find the derivative of f(x) = 3x^2 + 4x at x = 1.
+Answer: 10
+
+465. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+466. What is the area of a triangle with a base of 9 cm and a height of 7 cm?
+Answer: 31.5
+
+467. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+468. Find the 10th term of the arithmetic sequence where the first term is 8 and the common difference is 1.
+Answer: 17
+
+469. Solve the inequality: 3x - 9 < 3.
+Answer: 4
+
+470. What is log_10(1000)?
+Answer: 3
+
+471. Solve for x: 6x + 3 = 33.
+Answer: 30
+
+472. If f(x) = 2x^2 + 3x + 5, what is f(3)?
+Answer: 32
+
+473. What is sin(60�)?
+Answer: 0.866
+
+474. Find the derivative of f(x) = 3x^2 + 4x at x = 7.
+Answer: 46
+
+475. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+476. What is the area of a triangle with a base of 15 cm and a height of 8 cm?
+Answer: 60.0
+
+477. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+478. Find the 10th term of the arithmetic sequence where the first term is 1 and the common difference is 1.
+Answer: 10
+
+479. Solve the inequality: 2x - 6 < 3.
+Answer: 4
+
+480. What is log_10(1000)?
+Answer: 3
+
+481. Solve for x: 1x + 2 = 7.
+Answer: 5
+
+482. If f(x) = 2x^2 + 3x + 5, what is f(7)?
+Answer: 124
+
+483. What is sin(30�)?
+Answer: 0.5
+
+484. Find the derivative of f(x) = 3x^2 + 4x at x = 9.
+Answer: 58
+
+485. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+486. What is the area of a triangle with a base of 9 cm and a height of 12 cm?
+Answer: 54.0
+
+487. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+488. Find the 10th term of the arithmetic sequence where the first term is 3 and the common difference is 1.
+Answer: 12
+
+489. Solve the inequality: 3x - 10 < 3.
+Answer: 4
+
+490. What is log_10(1000)?
+Answer: 3
+
+491. Solve for x: 4x + 7 = 27.
+Answer: 20
+
+492. If f(x) = 2x^2 + 3x + 5, what is f(4)?
+Answer: 49
+
+493. What is sin(60�)?
+Answer: 0.866
+
+494. Find the derivative of f(x) = 3x^2 + 4x at x = 8.
+Answer: 52
+
+495. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+496. What is the area of a triangle with a base of 6 cm and a height of 14 cm?
+Answer: 42.0
+
+497. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+498. Find the 10th term of the arithmetic sequence where the first term is 10 and the common difference is 4.
+Answer: 46
+
+499. Solve the inequality: 4x - 5 < 3.
+Answer: 2
+
+500. What is log_10(1000)?
+Answer: 3
+
+501. Solve for x: 1x + 2 = 7.
+Answer: 5
+
+502. If f(x) = 2x^2 + 3x + 5, what is f(8)?
+Answer: 157
+
+503. What is sin(45�)?
+Answer: 0.7071
+
+504. Find the derivative of f(x) = 3x^2 + 4x at x = 2.
+Answer: 16
+
+505. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+506. What is the area of a triangle with a base of 5 cm and a height of 8 cm?
+Answer: 20.0
+
+507. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+508. Find the 10th term of the arithmetic sequence where the first term is 8 and the common difference is 5.
+Answer: 53
+
+509. Solve the inequality: 3x - 6 < 3.
+Answer: 3
+
+510. What is log_10(1000)?
+Answer: 3
+
+511. Solve for x: 10x + 1 = 51.
+Answer: 50
+
+512. If f(x) = 2x^2 + 3x + 5, what is f(1)?
+Answer: 10
+
+513. What is sin(30�)?
+Answer: 0.5
+
+514. Find the derivative of f(x) = 3x^2 + 4x at x = 8.
+Answer: 52
+
+515. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+516. What is the area of a triangle with a base of 12 cm and a height of 11 cm?
+Answer: 66.0
+
+517. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+518. Find the 10th term of the arithmetic sequence where the first term is 1 and the common difference is 4.
+Answer: 37
+
+519. Solve the inequality: 3x - 7 < 3.
+Answer: 3
+
+520. What is log_10(1000)?
+Answer: 3
+
+521. Solve for x: 6x + 6 = 36.
+Answer: 30
+
+522. If f(x) = 2x^2 + 3x + 5, what is f(5)?
+Answer: 70
+
+523. What is sin(60�)?
+Answer: 0.866
+
+524. Find the derivative of f(x) = 3x^2 + 4x at x = 9.
+Answer: 58
+
+525. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+526. What is the area of a triangle with a base of 12 cm and a height of 11 cm?
+Answer: 66.0
+
+527. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+528. Find the 10th term of the arithmetic sequence where the first term is 1 and the common difference is 4.
+Answer: 37
+
+529. Solve the inequality: 5x - 8 < 3.
+Answer: 2
+
+530. What is log_10(1000)?
+Answer: 3
+
+531. Solve for x: 10x + 4 = 54.
+Answer: 50
+
+532. If f(x) = 2x^2 + 3x + 5, what is f(4)?
+Answer: 49
+
+533. What is sin(45�)?
+Answer: 0.7071
+
+534. Find the derivative of f(x) = 3x^2 + 4x at x = 7.
+Answer: 46
+
+535. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+536. What is the area of a triangle with a base of 14 cm and a height of 14 cm?
+Answer: 98.0
+
+537. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+538. Find the 10th term of the arithmetic sequence where the first term is 8 and the common difference is 2.
+Answer: 26
+
+539. Solve the inequality: 4x - 1 < 3.
+Answer: 1
+
+540. What is log_10(1000)?
+Answer: 3
+
+541. Solve for x: 6x + 3 = 33.
+Answer: 30
+
+542. If f(x) = 2x^2 + 3x + 5, what is f(5)?
+Answer: 70
+
+543. What is sin(45�)?
+Answer: 0.7071
+
+544. Find the derivative of f(x) = 3x^2 + 4x at x = 7.
+Answer: 46
+
+545. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+546. What is the area of a triangle with a base of 14 cm and a height of 9 cm?
+Answer: 63.0
+
+547. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+548. Find the 10th term of the arithmetic sequence where the first term is 7 and the common difference is 1.
+Answer: 16
+
+549. Solve the inequality: 2x - 3 < 3.
+Answer: 3
+
+550. What is log_10(1000)?
+Answer: 3
+
+551. Solve for x: 4x + 2 = 22.
+Answer: 20
+
+552. If f(x) = 2x^2 + 3x + 5, what is f(7)?
+Answer: 124
+
+553. What is sin(45�)?
+Answer: 0.7071
+
+554. Find the derivative of f(x) = 3x^2 + 4x at x = 4.
+Answer: 28
+
+555. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+556. What is the area of a triangle with a base of 12 cm and a height of 11 cm?
+Answer: 66.0
+
+557. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+558. Find the 10th term of the arithmetic sequence where the first term is 2 and the common difference is 2.
+Answer: 20
+
+559. Solve the inequality: 1x - 4 < 3.
+Answer: 7
+
+560. What is log_10(1000)?
+Answer: 3
+
+561. Solve for x: 9x + 9 = 54.
+Answer: 45
+
+562. If f(x) = 2x^2 + 3x + 5, what is f(9)?
+Answer: 194
+
+563. What is sin(30�)?
+Answer: 0.5
+
+564. Find the derivative of f(x) = 3x^2 + 4x at x = 4.
+Answer: 28
+
+565. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+566. What is the area of a triangle with a base of 13 cm and a height of 5 cm?
+Answer: 32.5
+
+567. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+568. Find the 10th term of the arithmetic sequence where the first term is 2 and the common difference is 5.
+Answer: 47
+
+569. Solve the inequality: 1x - 8 < 3.
+Answer: 11
+
+570. What is log_10(1000)?
+Answer: 3
+
+571. Solve for x: 10x + 7 = 57.
+Answer: 50
+
+572. If f(x) = 2x^2 + 3x + 5, what is f(3)?
+Answer: 32
+
+573. What is sin(60�)?
+Answer: 0.866
+
+574. Find the derivative of f(x) = 3x^2 + 4x at x = 8.
+Answer: 52
+
+575. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+576. What is the area of a triangle with a base of 12 cm and a height of 11 cm?
+Answer: 66.0
+
+577. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+578. Find the 10th term of the arithmetic sequence where the first term is 5 and the common difference is 5.
+Answer: 50
+
+579. Solve the inequality: 1x - 2 < 3.
+Answer: 5
+
+580. What is log_10(1000)?
+Answer: 3
+
+581. Solve for x: 5x + 3 = 28.
+Answer: 25
+
+582. If f(x) = 2x^2 + 3x + 5, what is f(2)?
+Answer: 19
+
+583. What is sin(30�)?
+Answer: 0.5
+
+584. Find the derivative of f(x) = 3x^2 + 4x at x = 8.
+Answer: 52
+
+585. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+586. What is the area of a triangle with a base of 13 cm and a height of 8 cm?
+Answer: 52.0
+
+587. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+588. Find the 10th term of the arithmetic sequence where the first term is 5 and the common difference is 4.
+Answer: 41
+
+589. Solve the inequality: 1x - 6 < 3.
+Answer: 9
+
+590. What is log_10(1000)?
+Answer: 3
+
+591. Solve for x: 5x + 7 = 32.
+Answer: 25
+
+592. If f(x) = 2x^2 + 3x + 5, what is f(5)?
+Answer: 70
+
+593. What is sin(45�)?
+Answer: 0.7071
+
+594. Find the derivative of f(x) = 3x^2 + 4x at x = 8.
+Answer: 52
+
+595. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+596. What is the area of a triangle with a base of 8 cm and a height of 11 cm?
+Answer: 44.0
+
+597. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+598. Find the 10th term of the arithmetic sequence where the first term is 10 and the common difference is 5.
+Answer: 55
+
+599. Solve the inequality: 3x - 5 < 3.
+Answer: 3
+
+600. What is log_10(1000)?
+Answer: 3
+
+601. Solve for x: 4x + 9 = 29.
+Answer: 20
+
+602. If f(x) = 2x^2 + 3x + 5, what is f(1)?
+Answer: 10
+
+603. What is sin(30�)?
+Answer: 0.5
+
+604. Find the derivative of f(x) = 3x^2 + 4x at x = 3.
+Answer: 22
+
+605. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+606. What is the area of a triangle with a base of 11 cm and a height of 8 cm?
+Answer: 44.0
+
+607. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+608. Find the 10th term of the arithmetic sequence where the first term is 3 and the common difference is 5.
+Answer: 48
+
+609. Solve the inequality: 5x - 2 < 3.
+Answer: 1
+
+610. What is log_10(1000)?
+Answer: 3
+
+611. Solve for x: 8x + 9 = 49.
+Answer: 40
+
+612. If f(x) = 2x^2 + 3x + 5, what is f(7)?
+Answer: 124
+
+613. What is sin(60�)?
+Answer: 0.866
+
+614. Find the derivative of f(x) = 3x^2 + 4x at x = 8.
+Answer: 52
+
+615. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+616. What is the area of a triangle with a base of 12 cm and a height of 14 cm?
+Answer: 84.0
+
+617. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+618. Find the 10th term of the arithmetic sequence where the first term is 6 and the common difference is 5.
+Answer: 51
+
+619. Solve the inequality: 5x - 7 < 3.
+Answer: 2
+
+620. What is log_10(1000)?
+Answer: 3
+
+621. Solve for x: 6x + 5 = 35.
+Answer: 30
+
+622. If f(x) = 2x^2 + 3x + 5, what is f(1)?
+Answer: 10
+
+623. What is sin(30�)?
+Answer: 0.5
+
+624. Find the derivative of f(x) = 3x^2 + 4x at x = 5.
+Answer: 34
+
+625. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+626. What is the area of a triangle with a base of 11 cm and a height of 9 cm?
+Answer: 49.5
+
+627. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+628. Find the 10th term of the arithmetic sequence where the first term is 7 and the common difference is 1.
+Answer: 16
+
+629. Solve the inequality: 1x - 1 < 3.
+Answer: 4
+
+630. What is log_10(1000)?
+Answer: 3
+
+631. Solve for x: 1x + 2 = 7.
+Answer: 5
+
+632. If f(x) = 2x^2 + 3x + 5, what is f(6)?
+Answer: 95
+
+633. What is sin(45�)?
+Answer: 0.7071
+
+634. Find the derivative of f(x) = 3x^2 + 4x at x = 2.
+Answer: 16
+
+635. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+636. What is the area of a triangle with a base of 8 cm and a height of 9 cm?
+Answer: 36.0
+
+637. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+638. Find the 10th term of the arithmetic sequence where the first term is 4 and the common difference is 3.
+Answer: 31
+
+639. Solve the inequality: 4x - 3 < 3.
+Answer: 2
+
+640. What is log_10(1000)?
+Answer: 3
+
+641. Solve for x: 8x + 6 = 46.
+Answer: 40
+
+642. If f(x) = 2x^2 + 3x + 5, what is f(10)?
+Answer: 235
+
+643. What is sin(30�)?
+Answer: 0.5
+
+644. Find the derivative of f(x) = 3x^2 + 4x at x = 7.
+Answer: 46
+
+645. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+646. What is the area of a triangle with a base of 14 cm and a height of 13 cm?
+Answer: 91.0
+
+647. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+648. Find the 10th term of the arithmetic sequence where the first term is 8 and the common difference is 3.
+Answer: 35
+
+649. Solve the inequality: 5x - 6 < 3.
+Answer: 2
+
+650. What is log_10(1000)?
+Answer: 3
+
+651. Solve for x: 3x + 10 = 25.
+Answer: 15
+
+652. If f(x) = 2x^2 + 3x + 5, what is f(1)?
+Answer: 10
+
+653. What is sin(30�)?
+Answer: 0.5
+
+654. Find the derivative of f(x) = 3x^2 + 4x at x = 7.
+Answer: 46
+
+655. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+656. What is the area of a triangle with a base of 7 cm and a height of 8 cm?
+Answer: 28.0
+
+657. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+658. Find the 10th term of the arithmetic sequence where the first term is 4 and the common difference is 2.
+Answer: 22
+
+659. Solve the inequality: 3x - 6 < 3.
+Answer: 3
+
+660. What is log_10(1000)?
+Answer: 3
+
+661. Solve for x: 3x + 8 = 23.
+Answer: 15
+
+662. If f(x) = 2x^2 + 3x + 5, what is f(9)?
+Answer: 194
+
+663. What is sin(45�)?
+Answer: 0.7071
+
+664. Find the derivative of f(x) = 3x^2 + 4x at x = 5.
+Answer: 34
+
+665. In a data set, the mean is 20 and the standard deviation is 4. What is the z-score of 24?
+Answer: 1
+
+666. What is the area of a triangle with a base of 13 cm and a height of 13 cm?
+Answer: 84.5
+
+667. What is the probability of drawing a red card from a standard deck of cards?
+Answer: 0.5
+
+668. Find the 10th term of the arithmetic sequence where the first term is 1 and the common difference is 5.
+Answer: 46
+
+669. Solve the inequality: 4x - 7 < 3.
+Answer: 2
+
+670. What is log_10(1000)?
+Answer: 3
+
+671. Solve for x: 8x + 8 = 48.
+Answer: 5
+

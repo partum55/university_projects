@@ -1,0 +1,397 @@
+---
+title: "PS Lab 4 — Hypothesis Testing"
+author:
+  - "Nazar Mykhailyshchuk"
+  - "Andrii Hovorov"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    theme: flatly
+    toc: true
+    toc_float: true
+    number_sections: false
+    df_print: paged
+---
+
+## Work Breakdown Structure
+
+| Team Member              | Estimated Effort | Responsibilities               |
+|:-----------------------|:-----------------:|:----------------------------|
+| **Nazar Mykhailyshchuk** |       50%        | Problems 1, 2, RMarkdown Setup |
+| **Andrii Hovorov**       |       50%        | Problems 3, 4, Conclusions     |
+| **Total**                |     **100%**     |                                |
+
+```{r}
+library(ggplot2)
+```
+
+## Data generation helper
+
+We define the sequence $a_k = { k * \ln(k^2 * n + \pi) }$ where ${x}$ is fractional part, and then produce $X_k = \Phi^{-1}(a_k)$ for k=1..100 and $Y_l = \Phi^{-1}(a_{100+l})$ for l=1..50.
+
+```{r}
+team_id <- 17
+frac <- function(x) x - floor(x)
+
+make_samples <- function(n){
+    k_all <- 1:150
+    #a_k = { k * ln(k^2 * n + pi) }
+    a.data <- sapply(k_all, function(k) frac(k * log(k^2 * n + pi)))
+    x <- qnorm(a.data[1:100])
+    y <- qnorm(a.data[101:150])
+    list(x = x, y = y)
+}
+
+samples <- make_samples(team_id)
+x <- samples$x
+y <- samples$y
+```
+
+```{r}
+hist(x, col="cyan")
+hist(y, col="magenta")
+```
+
+```{r}
+qqplot(x, y)
+```
+
+QQ-plot implies x and y have similar distributions
+
+```{r}
+plot(x, pch=19, main="x")
+plot(y, pch=19, main="y")
+
+plot(x[1:50],y, pch=19, main="Scatter plot")
+```
+
+Scatter plot shows there is no relation between x and y
+
+## Problem 1
+
+**Hypotheses:** $H_0: \mu_1 = \mu_2$ vs. $H_1: \mu_1 \neq \mu_2$ with $\sigma_1^2 = \sigma_2^2 = 1$ (known).
+
+We use the $z$-test for the difference of means because population variances are known and equal.
+
+The test statistic is
+
+$$Z(X,Y) = \frac{\bar{X} - \bar{Y}}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}$$
+
+which is the same as
+
+$$
+Z(X,Y)=\sqrt{\dfrac{n_1n_2}{n_1+n_2}}\dfrac{\bar{X}-\bar{Y}}{\sigma}
+$$
+
+**Rejection Region:** General form of the rejection region (two-sided, level $\alpha = 0.05$): reject $H_0$ if $|z(x,y)| > z_{1-\alpha/2} = 1.96$
+
+the p-value is $p(x,y)=2\Phi(-|z(x,y)|)$
+
+```{r}
+sigma <- 1
+alpha <- 0.05
+n1 <- length(x)
+n2 <- length(y)
+
+mu1_hat <- mean(x)
+mu2_hat <- mean(y)
+Z_stat <- sqrt((n1*n2)/(n1+n2))*((mu1_hat-mu2_hat)/(sigma))
+
+crit_z <- qnorm(1 - alpha/2)
+p_val_z <- 2 * pnorm(-abs(Z_stat))
+
+#result
+cat("+++++ Task 1. Testing means of two distributions +++++\n")
+cat("H_0: mu1 = mu2   vs   H_1: mu1 != mu2\n")
+cat("|",Z_stat,"|", ">", crit_z, "\n",sep="")
+cat("p-value = ", p_val_z, "\n", sep="")
+cat("----- Estimated values -----\n")
+cat("mu1_hat = ", mu1_hat, "   ;   ", "mu2_hat = ", mu2_hat, "\n", sep="")
+```
+
+### Comments
+
+-   **Test used**: z-test for difference of two means with known variances (sigma\^2 = 1).
+
+-   **Why**: population variances are given as equal and known, so the normal (z) statistic applies.
+
+-   **Interpretation**: see printed statistic, p-value, and decision above.
+
+Conclusion **Decision: Fail to Reject Null Hypothesis (**$H_0$)
+
+We conducted a two-sided Z-test at the 0.05 significance level. The calculated Z-statistic is **-1.444**, corresponding to a p-value of **0.1486**. Since the p-value is greater than $\alpha = 0.05$, we do not have sufficient evidence to reject $H_0$. Therefore, we cannot claim that there is a significant difference between the means $\mu_1$ and $\mu_2$. Although estiamtes show that there is indeed a difference in means.
+
+## Problem 2
+
+**Hypotheses:** $H_0: \sigma_1^2 = \sigma_2^2$ vs. $H_1: \sigma_1^2 > \sigma_2^2$.
+
+We use the $F$-test (ratio of sample variances). For samples from normal distributions, the statistic follows an $F$-distribution with $(n_1-1, n_2-1)$ degrees of freedom under $H_0$: $$F(X,Y) = \frac{S_{XX}/(n_1-1)}{S_{YY}/(n_2-1)}$$
+
+**Rejection Region:** (one-sided, $\alpha=0.05$): reject $H_0$ if $f(x,y) > \mathcal{F}^{(n_1-1, n_2-1)}_{1-\alpha}$.
+
+p-value is $p(x,y) = 1-F_{\mathcal{F}}(f(x,y))$
+
+```{r}
+alpha <- 0.05
+
+S1 <- var(x)
+S2 <- var(y)
+F_stat <- S1 / S2
+df1 <- n1 - 1
+df2 <- n2 - 1
+
+
+p_val_f <- 1 - pf(F_stat, df1, df2) 
+crit_f <- qf(1 - alpha, df1, df2)
+
+#result
+cat("+++++ Task 2. Testing variances of two distributions with unknown means+++++\n")
+cat("H_0: sigma^2_1 = sigma^2_2   vs   H_1: sigma^2_1 != sigma^2_2\n")
+cat(F_stat, " > ", crit_f, "\n",sep="")
+cat("p-value = ", p_val_f, "\n", sep="")
+cat("----- Estimated values -----\n")
+cat("S1 = ", S1, "   ;   ", "S2 = ", S2, "\n", sep="")
+```
+
+### Comments
+
+-   **Test used**: F-test (ratio of sample variances).
+
+-   **Why**: comparing variances; under normality the ratio of sample variances has F distribution.
+
+-   **Interpretation**: see printed statistic, p-value, and decision above.
+
+### Conclusion
+
+Decision: Fail to reject Null Hypothesis ($H_0$)
+
+We conducted a one-sided F-test to determine if the variance of the first population is greater than the second. The calculated F-statistic is **0.921** with a p-value of **0.6412**. Since the p-value is greater than $\alpha = 0.05$, we fail to reject $H_0$. There is insufficient evidence to support the claim that $\sigma_1^2$ is strictly different than $\sigma_2^2$.
+
+## Problem 3
+
+```{r}
+plot(ecdf(x), col="cyan")
+plot(ecdf(y), col="magenta")
+```
+
+### (a)
+
+Hypotheses: $H_0: F_X=F_{\mathcal{N}}$ vs. $H_1: F_X \neq F_{\mathcal{N}}$
+
+We use the statistic of maximal differences (Kolmogorov test):
+
+$$
+d := \sup_{t \in \mathbf{R}}|\hat{F}_x(t)-F_{\mathcal{N}}(t)|
+$$
+
+which has a known distribution $\mathcal{D}_n$ under $H_0$
+
+We reject $H_0$ when $d > d^{(n)}_{1-\alpha}$
+
+Thus the p-value is $p(x)=1-F_{\mathcal{D}}(d)$
+
+```{r}
+#testing wether x is normally distributed
+ks.test(x, "pnorm", mean(x), sd(x))
+```
+
+```{r}
+plot(ecdf(x),col="cyan")
+x_range <- seq(min(x), max(x), length.out = 500)
+n_cdf <- pnorm(x_range, mean = mean(x), sd = sd(x))
+lines(x_range, 
+      n_cdf, 
+      col = "red", 
+      lwd = 2)
+
+```
+
+### (b)
+
+Hypotheses: $H_0: F_X=F_{\mathcal{E}(1)}$ vs. $H_1: F_X \neq F_{\mathcal{E}(1)}$
+
+We use the statistic of maximal differences (Kolmogorov test):
+
+$$
+d := \sup_{t \in \mathbf{R}}|\hat{F}_x(t)-F_{\mathcal{E}(1)}(t)|
+$$
+
+which has a known distribution $\mathcal{D}_n$ under $H_0$
+
+We reject $H_0$ when $d > d^{(n)}_{1-\alpha}$
+
+Thus the p-value is $p(x)=1-F_{\mathcal{D}}(d)$
+
+```{r}
+#testing wether |x| are exponentially distributed with lambda=1
+abs_x <- abs(x)
+ks.test(abs_x, "pexp", rate=1)
+```
+
+```{r}
+plot(ecdf(abs_x),col="cyan")
+abs_x_range <- seq(min(abs_x), max(abs_x), length.out = 500)
+exp_cdf <- pexp(abs_x_range, rate=1)
+lines(abs_x_range, 
+      exp_cdf, 
+      col = "red", 
+      lwd = 2)
+```
+
+### (c)
+
+Hypotheses: $H_0: F_X=F_{Y}$ vs. $H_1: F_X \neq F_{Y}$
+
+We use the statistic of maximal differences (Kolmogorov-Smirnov test):
+
+$$
+d := \sup_{t \in \mathbf{R}}|\hat{F}_x(t)-\hat{F}_{Y}(t)|
+$$
+
+which has a known distribution $\mathcal{D}_{n_1,n_2}$ under $H_0$
+
+We reject $H_0$ when $d > d^{(n_1,n_2)}_{1-\alpha}$
+
+Thus the p-value is $p(x)=1-F_{\mathcal{D}}(d)$
+
+```{r}
+#testing wether x and y have the same distribution
+ks.test(x, y)
+```
+
+```{r}
+plot(ecdf(x), col="cyan")
+x_range <- seq(min(x), max(x), length.out = 500)
+lines(x_range, 
+      ecdf(y)(x_range), 
+      col = "magenta", 
+      lwd = 2)
+```
+
+### Conclusions
+
+The Kolmogorov(–Smirnov) test compares the empirical CDF of a sample with a theoretical CDF (one-sample) or the empirical CDFs of two samples (two-sample). It uses the maximum vertical difference $d$ between the CDFs as the test statistic. A large $d$ (or small p-value) indicates the distributions are unlikely to be the same, leading to rejection of $H_0$​.
+
+(a) We fail to reject null hypothesis thus we cant reject that x are normally distributed. It is worth noting that mean and variance for hypothetical normal distribution are estimated, so that could slightly impact the result of this test
+
+(b) For \|x\| we also fail to reject null hypothesis that they are exponentially distributed with rate 1. We again used Kolmogorov goodness-of-fit test and got quite large p-value.
+
+(c) In this test (Kolmogorov-Smirnov) we resulted in inability of rejecting the hypothesis that x and y are identically distributed. This could be sustained with the fact how x and y were generated from a single batch, although different indices of it.
+
+## Problem 4
+
+```{r}
+data <- read.csv("data.csv")
+head(data)
+```
+
+```{r}
+plot(data$time_study, data$Marks,
+     main = "Marks vs Study Time",
+     xlab = "Study Time",
+     ylab = "Marks",
+     col = "blue")
+```
+
+There is a clear positive relationship between Study Time and Marks. As the amount of Study Time increases, the Marks generally tend to increase. But the relationship doesnt seem to be strictly linear, as is shows some curvature downwards.
+
+```{r}
+study.model <- lm(data$Marks~data$time_study)
+plot(data$time_study,data$Marks, 
+     col = "blue",
+     main = "Fitting regression line",
+     xlab = "Study Time",
+     ylab = "Marks",)
+abline(study.model, col = "red")
+```
+
+The goal of OLS Linear Regression is to find the best fit line that minimizes the sum of the squared residuals between the observed data points and the line. This line is represented by the equation:
+
+$$
+\hat{Y}=a+bx+\varepsilon
+$$
+
+$a$ and $b$ are estimated with their respected estimators.
+
+```{r}
+summary(study.model)
+```
+
+The $r^2$ determination coefficient show a good number 0.89 (\>0.7) which indicated rather good fit of the line. But the curved nature of relation implies that our model may overestimate some values.
+
+Now let's test whether the study time is significant in predicting marks. To do this we can test the slope coefficient, precisely:
+
+$$
+H_0:b=0 \qquad \text{vs} \qquad H_1: b\neq 0
+$$
+
+under $H_0$ we can use test statistic:
+
+$$
+T_0 = \sqrt{s_{xx}}\dfrac{\hat{b}}{\hat{\sigma}} \sim \mathcal{T}_{n-2}
+$$
+
+indeed Standard error of $\hat{b}$ is $\dfrac{\hat{\sigma}}{\sqrt{s_{xx}}}$ so we can rewrite the statistic as
+
+$$
+T_0 = \dfrac{\hat{b}}{SE(\hat{b})} \sim \mathcal{T}_{n-2}
+$$
+
+p-value is therefore $p(x)=2F_{\mathcal{T}_{n-2}}(-|t_0|)$
+
+```{r}
+# lets extract estimated data from model summary
+
+b_hat <- summary(study.model)$coefficients["data$time_study", "Estimate"]
+SE_b_hat <- summary(study.model)$coefficients["data$time_study", "Std. Error"]
+DF <- summary(study.model)$df[2]
+T0 <- b_hat / SE_b_hat
+p_value <- 2 * (1 - pt(abs(T0), df = DF))
+
+cat("+++ Calculated test results +++\n")
+cat("b_hat: ", b_hat, "\n")
+cat("SE_b_hat: ", SE_b_hat, "\n")
+cat("Degrees of Freedom: ", DF, "\n")
+cat("T-statistic (T0): ", T0, "\n")
+cat("p-value: ", p_value, "\n")
+```
+
+The manually calculated values coincide with those in model summary (T-statistics and p-value).
+
+The t for the slope coefficient gave t-statistic of $27.85$ and a corresponding $p$-value effectively equal to zero ($< 2e-16$) with 98 degrees of freedom. Since the p-value is far below the $0.05$ significance level, we **reject the null hypothesis** ($H_0: b = 0$). We conclude with strong statistical evidence that Study Time is a highly significant predictor of Marks in this dataset.
+
+To make some predictions we need to use the estimated coefficients which have the following estimators:
+
+$$
+\hat{a} = \bar{Y}-\hat{b}\bar{x} \qquad \qquad \hat{b}=\dfrac{S_{xY}}{S_{xx}}=\dfrac{\sum(x_i-\bar{x})(Y_i-\bar{Y})}{\sum (x_i-\bar{x})^2}
+$$
+
+These values i extract from summary of the model
+
+```{r}
+coefficients(study.model)
+
+#If Alice studies for approximately 8 hours, what grade can we predict for her?
+predicted_marks <- coef(study.model)[1] + coef(study.model)[2] * 8
+cat("Predicted grade is", predicted_marks, "\n")
+```
+
+### Ways to improve prediction:
+
+1.  We could try to handle some outliers
+2.  Try to use polynomial regression model (for curve)
+3.  If there is data available we could try multivariable regression and base our prediction not only on study time.
+
+## Conclusions
+
+In this lab we conducted tests on some samples and examined assumptions of their mean and variance, their distributions and also used datasets and tried to construct linear regression model
+
+First, comparison of means and variances:
+
+For problem 1, a two-sided z-test comparing two population means ($\mu_1$ and $\mu_2$) at a $0.05$ significance level resulted in a z-statistic of $-1.444$ and a p-value of $0.1486$. Since the p-value was greater than the significance level ($0.1486 > 0.05$), the null hypothesis was not rejected, indicating insufficient statistical evidence to claim a significant difference between the population means.
+
+For problem 2, an f-test was used to check the one-sided hypothesis that the first variance was greater than the second ($H_1: \sigma_1^2 > \sigma_2^2$). The resulting f-statistic of $0.921$ was less than the critical value of $1.531$, producing a p-value of $0.641$. Consequently, the null hypothesis of equal variances was not rejected, suggesting the population variances are not significantly different.
+
+Next, we practiced distribution fitting and regression:
+
+Problems 3 and 4 extended the analysis beyond simple parameter comparisons. The Kolmogorov and Kolmogorov-Smirnov test was used to assess the goodness-of-fit for specified theoretical distributions, namely the normal and exponential distributions, against the sample data. We also compared similarity of two distributions of x and y. Furthermore, a linear regression analysis was performed on study time and marks data. This involved fitting a model, evaluating its overall goodness-of-fit, and using hypothesis testing (specifically, a t-test) to determine the statistical significance of study time as a predictor for marks. The laboratory successfully demonstrated the full cycle of statistical inference, moving from generating hypotheses and calculating test statistics to making data-driven conclusions about population properties and predictive relationships.

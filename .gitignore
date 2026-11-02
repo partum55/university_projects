@@ -1,0 +1,31 @@
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Node
+node_modules/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Datasets and videos are not stored in this repo (see DATASETS.md)
+**/110m_cultural/
+programming-basics/other/dictionary-english-game/*.csv
+programming-basics/other/dictionary-english-game/*.lst
+programming-basics/programming-basics-1/weekly-labs/week_8/dictionary/*.csv
+*.MOV
+*.mov

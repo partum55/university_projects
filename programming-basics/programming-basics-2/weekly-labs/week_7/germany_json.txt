@@ -1,0 +1,6 @@
+{
+  "name": "Investor Germany",
+  "country": "Germany",
+  "domain": "germany-investments.de",
+  "other_info": "Default investor data for Germany"
+}

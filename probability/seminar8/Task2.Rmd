@@ -1,0 +1,138 @@
+---
+title: "Task 2: LLN & CLT Visualization"
+output: html_document
+---
+
+```{r setup, message=FALSE, warning=FALSE}
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(scales)
+
+# Parameters
+set.seed(123)
+mu1 <- 67.6
+sigma1 <- 3
+N <- 1000
+sample_sizes <- c(10, 100, 1000, 10000)
+threshold <- 0.03
+```
+
+## Part (i): Central Limit Theorem
+
+```{r clt_visualization, message=FALSE, warning=FALSE, fig.width=10, fig.height=6}
+# Generate sample means for each sample size
+sample_means_df <- data.frame()
+
+for (n in sample_sizes) {
+  means <- replicate(N, mean(rnorm(n, mu1, sigma1)))
+  sample_means_df <- rbind(
+    sample_means_df,
+    data.frame(sample_mean = means, n = as.factor(n))
+  )
+}
+
+ggplot(sample_means_df, aes(x = sample_mean, fill = n)) +
+  geom_histogram(aes(y = after_stat(density)), bins = 40, alpha = 0.35, position = "identity") +
+  geom_vline(xintercept = mu1, color = "black", linetype = "dashed", linewidth = 1) +
+  stat_function(
+    fun = dnorm,
+    args = list(mean = mu1, sd = sigma1 / sqrt(10)),
+    color = "#F8766D", linewidth = 0.8, linetype = "solid"
+  ) +
+  stat_function(
+    fun = dnorm,
+    args = list(mean = mu1, sd = sigma1 / sqrt(100)),
+    color = "#7CAE00", linewidth = 0.8, linetype = "solid"
+  ) +
+  stat_function(
+    fun = dnorm,
+    args = list(mean = mu1, sd = sigma1 / sqrt(1000)),
+    color = "#00BFC4", linewidth = 0.8, linetype = "solid"
+  ) +
+  stat_function(
+    fun = dnorm,
+    args = list(mean = mu1, sd = sigma1 / sqrt(10000)),
+    color = "#C77CFF", linewidth = 0.8, linetype = "solid"
+  ) +
+  labs(
+    title = "Central Limit Theorem in Action",
+    subtitle = "Distributions of sample means for different n",
+    x = "Sample mean",
+    y = "Density",
+    fill = "Sample size n"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "top")
+```
+
+**Analysis:**
+
+As $n$ increases the distribution of sample means becomes concentrated around $\mu_1 = 67.6$. The theoretical normal curves (solid lines) match the empirical histograms closely, demonstrating that the sample means follow $\mathcal{N}(\mu_1, \sigma_1^2/n)$. The variance decreases as $n$ grows, confirming the Central Limit Theorem.
+
+## Part (ii): Law of Large Numbers
+
+```{r lln_analysis, message=FALSE, warning=FALSE, fig.width=10, fig.height=6}
+
+# Calculate theoretical and empirical probabilities using the same sample means
+results <- data.frame()
+
+for (n in sample_sizes) {
+  means_for_n <- sample_means_df$sample_mean[as.numeric(as.character(sample_means_df$n)) == n]
+
+  # Theoretical probability: P(|X - mu1| > threshold)
+  standard_error <- sigma1 / sqrt(n)
+  theoretical_p <- 2 * pnorm(mu1 - threshold, mean = mu1, sd = standard_error)
+
+  # Empirical frequency
+  empirical_f <- mean(abs(means_for_n - mu1) > threshold)
+
+  results <- rbind(results, data.frame(
+    n = n,
+    theoretical_p = theoretical_p,
+    empirical_f = empirical_f
+  ))
+}
+
+results_long <- results %>%
+  pivot_longer(
+    cols = c(theoretical_p, empirical_f),
+    names_to = "Type",
+    values_to = "Probability"
+  ) %>%
+  mutate(Type = factor(Type,
+    levels = c("theoretical_p", "empirical_f"),
+    labels = c("Theoretical p_n", "Empirical f_n")
+  ))
+
+ggplot(results_long, aes(x = n, y = Probability, color = Type, shape = Type)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  scale_x_log10(breaks = sample_sizes, labels = scales::comma) +
+  scale_color_manual(values = c("Theoretical p_n" = "#0072B2", "Empirical f_n" = "#D55E00")) +
+  scale_shape_manual(values = c("Theoretical p_n" = 16, "Empirical f_n" = 17)) +
+  labs(
+    title = "Law of Large Numbers",
+    subtitle = "Probability that |X̄ − μ₁| > 0.03 vs sample size",
+    x = "Sample size (log scale)",
+    y = "Probability",
+    color = NULL,
+    shape = NULL
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "top")
+
+print(results)
+```
+
+**Analysis:**
+
+The results demonstrate the Law of Large Numbers:
+
+1. As $n$ increases from $10$ to $10{,}000$, the probability $P(|\bar{X} - \mu_1| > 0.03)$ decreases (from $\approx 0.92$ to nearly $0$).
+
+2. The empirical frequencies $f_n$ closely match the theoretical probabilities $p_n$, confirming that our simulation aligns with theory.
+
+3. For large $n$, the sample mean $\bar{X}$ converges to $\mu_1$, making deviations greater than $0.03$ extremely unlikely.
+
+4. This illustrates the LLN: larger samples produce more reliable estimates of the population mean.

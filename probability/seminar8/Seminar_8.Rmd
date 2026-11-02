@@ -1,0 +1,245 @@
+---
+title: 'Seminar 10: Descriptive statistics'
+output: html_notebook
+---
+
+## 1. Data (Id is the average of the member's no. in the P&S list)
+
+### Task: Generate your data
+
+This is a sample of size $n=1000$ combined from two samples of size $500$ from the normal distributions $N(\mu_k,\sigma_k^2)$ with $\mu_1 = Id$, $\sigma_1 = 3$ and $\mu_2 = -2$, $\sigma_2 = Id$
+
+Hint: you can use $\texttt{mean = c}(\mu_1,\mu_2)$ and $\texttt{sd = c}(\sigma_1,\sigma_2)$
+
+```{r}
+set.seed(123)
+Id <- 67.6
+n <- 1000
+mu1 <- Id
+sd1 <- 3 #standard deviation
+mu2 <- -2
+sd2 <- Id
+sample1 <- rnorm(500, mean = mu1, sd = sd1)
+sample2 <- rnorm(500, mean = mu2, sd = sd2)
+
+my.data <- c(sample1, sample2)
+summary(my.data)
+```
+Analysis:
+This is a bimodal distribution: one cluster near -2, another near 67.6
+
+1st Quartile: -1.983
+25% of the data values are below -1.983, and 75% are above it.
+
+3rd Quartile: 68.611
+75% of the data are below this value, and 25% are above it.
+This aligns with the second cluster centered near 67.6.
+
+## 2. Visualise the data
+
+### Task: Draw the histogram of the data, empirical density, and empirical cdf. Comment on whether the data are close to a normal one
+
+```{r}
+# draw histogram
+par(mfrow = c(1, 2))
+hist(my.data, breaks = 30, probability = TRUE, 
+     main = "Histogram with Density Curves",
+     xlab = "Value", col = "lightblue", border = "white")
+
+# superimpose empirical density (using kernel density estimation)
+lines(density(my.data), col = "red", lwd = 2)
+
+# superimpose normal density (using sample’s mean and standard deviation)
+x <- seq(min(my.data), max(my.data), length = 100)
+lines(x, dnorm(x, mean = mean(my.data), sd = sd(my.data)), 
+      col = "blue", lwd = 2, lty = 2)
+
+legend("topright", legend = c("Empirical Density", "Normal Density"), 
+       col = c("red", "blue"), lwd = 2, lty = c(1, 2))
+```
+Analysis:
+The red empirical curve is not symmetric — it shows two peaks (one around -2, another near 67.6)
+The blue normal curve is smooth and bell-shaped but does not fit well — because the data is not normally distributed.
+This occurs since the data comes from two distinct normal distributions, not a single one.
+
+Normal density:
+* assumes that data is normally distributed
+* uses sample’s mean and standard deviation to fit the curve.
+It shows what the data would look like if it followed a normal distribution.
+
+### Plot ecdf
+
+```{r}
+# plot ecdf
+plot(ecdf(my.data), main = "Empirical CDF", 
+     xlab = "Value", ylab = "CDF", col = "red")
+# superimpose cdf for standard normal
+lines(x, pnorm(x, mean = mean(my.data), sd = sd(my.data)), 
+      col = "blue", lwd = 2)
+
+legend("topleft", legend = c("Empirical CDF", "Normal CDF"), 
+       col = c("red", "blue"), lwd = 2)
+
+# calculate maximal difference  (max vertical distance between the empirical CDF and the theoretical normal CDF)
+ks_test <- ks.test(my.data, "pnorm", mean = mean(my.data), sd = sd(my.data))
+cat("Maximal difference (KS statistic):", ks_test$statistic, "\n")
+
+```
+Analysis:
+Empirical CDF climbs sharply around 60–80. That steep jump means a lot of data is concentrated there, more than a normal curve would expect.
+
+
+## 3. Skewness and kurtosis of the data
+(skewness measures how symmetric the data is around the mean)
+(kurtosis measures how “peaked” or “flat” a distribution is relative to the normal)
+
+**Skewness** is defined as $$
+  \mathsf{E} \left[\left({\frac {X-\mu }{\sigma }}\right)^{3}\right]={\frac {\mu _{3}}{\sigma ^{3}}}={\frac {\mathsf{E} \left[(X-\mu )^{3}\right]}{\ \ \ (\mathsf{E} \left[(X-\mu )^{2}\right])^{3/2}}}
+  
+$$
+
+Positive skewness means the data have longer right tail and then the mean value $\mathsf{E}(X)$ is greater than the median
+
+**Kurtosis** is defined as $$
+  \mathsf{E} \left[\left({\frac {X-\mu }{\sigma }}\right)^{4}\right]={\frac {\mu _{4}}{\sigma ^{4}}}={\frac {\mathsf{E} \left[(X-\mu )^{4}\right]}{\ \ \ (\mathsf{E} \left[(X-\mu )^{2}\right])^{2}}}
+$$
+
+For a standard normal distribution, the kurtosis is $3$. If we get a larger value, then more data are concentrated near the mean, and the empirical density is more steep
+
+```{r}
+# skewness
+skewness <- function(x) {
+  n <- length(x)
+  mean_diff <- x - mean(x)
+  skew <- (sum(mean_diff^3)/n) / (sum(mean_diff^2)/n)^(3/2)
+  return(skew)
+}
+
+# kurtosis
+kurtosis <- function(x) {
+  n <- length(x)
+  mean_diff <- x - mean(x)
+  kurt <- (sum(mean_diff^4)/n) / (sum(mean_diff^2)/n)^2
+  return(kurt)
+}
+
+cat("Skewness:", skewness(my.data), "\n")
+cat("Kurtosis:", kurtosis(my.data), "\n")
+cat("Excess Kurtosis (relative to normal):", kurtosis(my.data) - 3, "\n")
+```
+Analysis:
+Data is negatively skewed (-1.111987 ), the left tail is longer.
+
+Kurtosis is 3.866626, which means that data is leptokurtic. The distribution has:
+A sharper central peak, and heavier tails (more extreme values) than a normal curve.
+
+
+## 4. Percentiles
+
+### For q= 0.1,...,0.9 calculate sample q-percentiles manually (i.e. by sorting the data and picking the corresponding values) and by using percentile
+(The q-th percentile is the value below which q × 100% of the data fall)
+
+```{r}
+sorted_data <- sort(my.data)
+q_values <- seq(0.1, 0.9, by = 0.1)
+
+# Manual percentiles
+manual_percentiles <- sapply(q_values, function(q) {
+  index <- q * length(sorted_data)
+  if (index == floor(index)) {
+    return(sorted_data[index])
+  } else {
+    return(sorted_data[ceiling(index)])
+  }
+})
+
+# Using quantile function
+r_percentiles <- quantile(my.data, probs = q_values)
+
+# Compare results
+percentile_comparison <- data.frame(
+  Quantile = q_values,
+  Manual = manual_percentiles,
+  R_Function = r_percentiles,
+  Difference = manual_percentiles - r_percentiles
+)
+
+print(percentile_comparison)
+
+```
+Analysis:
+The differences between manual and R’s quantile() results are close to 0.
+This is because R uses interpolation, while the manual version just rounds up. Still both are calculating correctly.
+
+Lower percentiles (10–30%) are negative - from the second distribution centered near −2 with high variance.
+Upper percentiles (50–90%) are around 65–70 - from the first distribution centered near 67.6.
+
+
+
+## 5. Sample mean and sample standard error vs the theoretical ones
+
+### What is the theoretical expected value of the random variable considered? What is the variance? Compare them to the sample values; explain the difference in the variance
+
+```{r}
+# theoretical expected value and variance
+
+# sample mean and sample variance
+theoretical_mean <- (mu1 + mu2) / 2
+theoretical_var <- (sd1^2 + sd2^2 + (mu1 - theoretical_mean)^2 + (mu2 - theoretical_mean)^2) / 2
+
+# Sample statistics
+sample_mean <- mean(my.data)
+sample_var <- var(my.data)
+sample_sd <- sd(my.data)
+
+cat("Theoretical mean:", theoretical_mean, "\n")
+cat("Sample mean:", sample_mean, "\n")
+cat("Difference in means:", sample_mean - theoretical_mean, "\n\n")
+
+cat("Theoretical variance:", theoretical_var, "\n")
+cat("Sample variance:", sample_var, "\n")
+cat("Difference in variances:", sample_var - theoretical_var, "\n")
+```
+Analysis:
+The sample mean is almost identical to the theoretical one (difference = 0.03).
+This is expected because we have a large sample (n = 1000), so the law of large numbers ensures that the sample mean converges to the true expected value
+
+The sample variance (3558.3) is slightly higher than the theoretical (3500.4).
+Reason:
+Sampling variability - random samples rarely match the exact population variance.
+Mixture randomness - one of the groups (N(−2, (67.6)^2)) has a very wide spread, so a few extreme values can make the variance much larger in some samples.
+
+## 6. k-sigma rule
+
+### Calculate the fraction of the data that are within $k\sigma$ of the sample mean for $k=1,2,3$. Do we get the result expected? Why or why not?
+
+```{r}
+# your code here
+k_sigma_rule <- function(data, k_values = c(1, 2, 3)) {
+  mean_val <- mean(data)
+  sd_val <- sd(data)
+  
+  results <- sapply(k_values, function(k) {
+    lower <- mean_val - k * sd_val
+    upper <- mean_val + k * sd_val
+    fraction <- mean(data >= lower & data <= upper)
+    return(fraction)
+  })
+  
+  return(data.frame(k = k_values, fraction_within = results))
+}
+
+# Apply k-sigma rule
+k_results <- k_sigma_rule(my.data)
+print(k_results)
+
+# Expected values for normal distribution
+expected_fractions <- c(0.6827, 0.9545, 0.9973)
+k_results$expected <- expected_fractions
+k_results$difference <- k_results$fraction_within - k_results$expected
+
+print(k_results)
+```
+About 79%, 93%, and 99.5% of the data are within 1, 2, and 3 standard deviations of the mean.
+These numbers are slightly different from expected ones for a normal distribution (68%, 95%, 99.7%), which means the data isn’t perfectly normal.
+More values are close to the mean, showing the data is more tightly grouped and not evenly spread like a normal curve.

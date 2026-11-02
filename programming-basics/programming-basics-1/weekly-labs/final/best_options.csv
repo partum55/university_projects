@@ -1,0 +1,31 @@
+Visits,Gym,Combination,Price/Visit
+1,Gym_2,1 Visit,18
+2,Gym_10,1 Pack,16.8
+3,Gym_18|Gym_25,1 Pack|1 Pack,17.6
+4,Gym_5|Gym_21,1 Pack|1 Pack,16.5
+5,Gym_5|Gym_21,1 Pack & 1 Visit|1 Pack & 1 Visit,17.6
+6,Gym_10,3 Pack,16.8
+7,Gym_4,1 Pack,16.8
+8,Gym_5|Gym_21,2 Pack|2 Pack,16.5
+9,Gym_5|Gym_21,2 Pack & 1 Visit|2 Pack & 1 Visit,17.11
+10,Gym_3,1 Pack,16.15
+11,Gym_3,1 Pack & 1 Visit,16.41
+12,Gym_5|Gym_21,3 Pack|3 Pack,16.5
+13,Gym_3,1 Pack & 3 Visit,16.81
+14,Gym_4|Gym_10,2 Pack|7 Pack,16.8
+15,Gym_4|Gym_10,2 Pack & 1 Visit|7 Pack & 1 Visit,17.08
+16,Gym_5|Gym_21,4 Pack|4 Pack,16.5
+17,Gym_5|Gym_21,4 Pack & 1 Visit|4 Pack & 1 Visit,16.82
+18,Gym_3|Gym_6,Membership|Membership,16.56
+19,Gym_3,Membership,16.24
+20,Gym_3,Membership,15.95
+21,Gym_3,Membership,15.69
+22,Gym_1|Gym_3,Membership|Membership,15.45
+23,Gym_1,Membership,15.22
+24,Gym_1,Membership,15.0
+25,Gym_1,Membership,14.8
+26,Gym_1,Membership,14.62
+27,Gym_1,Membership,14.44
+28,Gym_1,Membership,14.29
+29,Gym_1,Membership,14.14
+30,Gym_1|Gym_14|Gym_16,Membership|Membership|Membership,14.0

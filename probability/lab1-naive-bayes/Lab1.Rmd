@@ -1,0 +1,877 @@
+---
+editor_options:
+  markdown:
+    wrap: 72
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Probability and Statistics
+
+# Lab Assignment 1: Naive Bayes Classifier
+
+## Work breakdown
+
+-   *Nazar Mykhailyshchuk*: Bayes classifier implementation
+-   *Nikita Lenyk*: Data preprocessing, parametes comparison experiments
+-   *Anastasiya Shopska*: Data Visualisation
+
+## Package Installation
+
+```{r message=FALSE, eval=FALSE}
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
+install.packages(c("readr", "stringi", "tokenizers", "SnowballC", "textstem", "tidyverse", "tidytext", "ggplot2", "wordcloud", "RColorBrewer", "gridExtra", "tidyr"))
+```
+
+## Setup
+```{r libraries, message=FALSE, warning=FALSE}
+library(readr)
+library(textstem)
+library(stringi)
+library(tokenizers)
+library(SnowballC)
+library(tidyverse)
+library(tidytext)
+library(ggplot2)
+library(wordcloud)
+library(RColorBrewer)
+library(gridExtra)
+library(tidyr)
+```
+
+## Helper functions for text preprocessing
+
+```{r helper-data-clean}
+# Remove stopwords from a vector of tokens (preserving order and duplicates)
+remove_stopwords_from_tokens <- function(tokens, stopwords_list) {
+  tokens[!tokens %in% stopwords_list]
+}
+
+# Apply stemming to tokens if they exist
+apply_stemming_to_tokens <- function(tokens) {
+  if (length(tokens) > 0) {
+    SnowballC::wordStem(tokens, language = "english")
+  } else {
+    tokens
+  }
+}
+
+# Apply lemmatization to tokens if they exist
+apply_lemmatization_to_tokens <- function(tokens) {
+  if (length(tokens) > 0) {
+    textstem::lemmatize_words(tokens)
+  } else {
+    tokens
+  }
+}
+
+# Generate word n-grams from tokens
+generate_ngrams_from_tokens <- function(tokens, n) {
+  if (length(tokens) >= n) {
+    sapply(seq_len(length(tokens) - n + 1), function(i) {
+      paste(tokens[i:(i + n - 1)], collapse = "_")
+    })
+  } else {
+    character(0)
+  }
+}
+```
+
+## Text Preprocessing Pipeline
+
+```{r text-preprocess}
+#' Build Text Preprocessing Pipeline for SMS Spam Classification
+#'
+#' @param texts Character vector of text messages to preprocess
+#' @param do_stem Apply stemming (default: FALSE)
+#' @param do_lemma Apply lemmatization (default: FALSE)
+#' @param remove_stopwords Remove stop words (default: TRUE)
+#' @param stopwords_list Custom stop words list (default: NULL)
+#' @param ngram N-gram size: 1=unigrams, 2=bigrams, etc. (default: 1)
+#' @param tokenize_special Tokenize emails/phones/URLs as special tokens (default: TRUE)
+#' @param vocabulary Pre-defined vocabulary (for test data). If NULL, builds vocabulary from texts (for train data)
+#'
+#' @return List with dtm (matrix), vocabulary, and preprocessing_info
+build_preprocessing_pipeline <- function(texts,
+                                         do_stem = FALSE,
+                                         do_lemma = FALSE,
+                                         remove_stopwords = TRUE,
+                                         stopwords_list = NULL,
+                                         ngram = 1,
+                                         tokenize_special = TRUE,
+                                         vocabulary = NULL) {
+  if (!is.character(texts) || length(texts) == 0) {
+    stop("texts must be a non-empty character vector")
+  }
+
+  if (!is.numeric(ngram) || length(ngram) != 1 || ngram < 1 || ngram != as.integer(ngram)) {
+    stop("ngram must be a single positive integer")
+  }
+
+  if (do_stem && do_lemma) {
+    warning("Both stemming and lemmatization enabled. Using lemmatization only (recommended).")
+    do_stem <- FALSE
+  }
+
+  preprocessing_info <- list(
+    do_stem = do_stem,
+    do_lemma = do_lemma,
+    remove_stopwords = remove_stopwords,
+    custom_stopwords = !is.null(stopwords_list),
+    ngram = ngram,
+    tokenize_special = tokenize_special,
+    original_length = length(texts)
+  )
+
+  # Step 1: Text cleaning and normalization
+  clean_texts <- stringi::stri_trans_tolower(texts)
+
+  if (tokenize_special) {
+    # Replace special patterns with tokens
+    clean_texts <- stringi::stri_replace_all_regex(clean_texts, "\\b[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}\\b", " EMAIL ")
+    clean_texts <- stringi::stri_replace_all_regex(clean_texts, "\\bhttps?://\\S+\\b", " URL ")
+    clean_texts <- stringi::stri_replace_all_regex(clean_texts, "\\b\\d{3}[-.]?\\d{3}[-.]?\\d{4}\\b", " PHONE ")
+    clean_texts <- stringi::stri_replace_all_regex(clean_texts, "\\$\\d+(?:\\.\\d{2})?", " MONEY ")
+    clean_texts <- stringi::stri_replace_all_regex(clean_texts, "\\b\\d{5,}\\b", " LONGNUM ")
+    clean_texts <- stringi::stri_replace_all_regex(clean_texts, "[^a-z\\s]", " ")
+    clean_texts <- stringi::stri_replace_all_regex(clean_texts, "\\s+", " ")
+    clean_texts <- stringi::stri_trim_both(clean_texts)
+  } else {
+    # Standard cleaning
+    clean_texts <- stringi::stri_replace_all_regex(clean_texts, "[^a-z\\s]", " ")
+    clean_texts <- stringi::stri_replace_all_regex(clean_texts, "\\s+", " ")
+    clean_texts <- stringi::stri_trim_both(clean_texts)
+  }
+
+  # Step 2: Tokenization
+  tokens_list <- tokenizers::tokenize_words(clean_texts, lowercase = FALSE, strip_punct = FALSE)
+
+  # Step 3: Stop words removal
+  if (remove_stopwords) {
+    if (is.null(stopwords_list)) {
+      stopwords_list <- readLines("data/stop_words.txt", warn = FALSE)
+    }
+
+    tokens_list <- lapply(tokens_list, remove_stopwords_from_tokens, stopwords_list)
+  }
+
+  # Step 4: Stemming
+  if (do_stem) {
+    if (!requireNamespace("SnowballC", quietly = TRUE)) {
+      warning("SnowballC package not available. Skipping stemming.")
+    } else {
+      tokens_list <- lapply(tokens_list, apply_stemming_to_tokens)
+    }
+  }
+
+  # Step 5: Lemmatization
+  if (do_lemma) {
+    if (!requireNamespace("textstem", quietly = TRUE)) {
+      warning("textstem package not available. Skipping lemmatization.")
+    } else {
+      tokens_list <- lapply(tokens_list, apply_lemmatization_to_tokens)
+    }
+  }
+  # Step 6: N-gram generation
+  if (ngram == 1) {
+    ngram_tokens <- tokens_list
+  } else {
+    ngram_tokens <- lapply(tokens_list, generate_ngrams_from_tokens, ngram)
+  }
+
+  # Step 7: Build vocabulary and create DTM
+  # Count term frequencies across all documents
+  all_terms <- unlist(ngram_tokens)
+
+  # Use provided vocabulary (for test data) or build from current texts (for train data)
+  if (is.null(vocabulary)) {
+    term_freq <- table(all_terms)
+    vocabulary <- sort(names(term_freq))
+  }
+
+  # Create Document-Term Matrix using base R
+  # Initialize empty matrix
+  dtm <- matrix(0,
+    nrow = length(ngram_tokens),
+    ncol = length(vocabulary),
+    dimnames = list(
+      docs = paste0("doc", seq_along(ngram_tokens)),
+      terms = vocabulary
+    )
+  )
+
+  # Fill the matrix
+  for (doc_idx in seq_along(ngram_tokens)) {
+    doc_terms <- ngram_tokens[[doc_idx]]
+
+    # Keep only terms that are in vocabulary
+    doc_terms_in_vocab <- doc_terms[doc_terms %in% vocabulary]
+
+    if (length(doc_terms_in_vocab) > 0) {
+      # Count term frequencies for this document
+      doc_term_counts <- table(doc_terms_in_vocab)
+
+      # Update the matrix for this document
+      for (term in names(doc_term_counts)) {
+        dtm[doc_idx, term] <- doc_term_counts[[term]]
+      }
+    }
+  }
+
+  # Update preprocessing info with final statistics
+  preprocessing_info$final_vocab_size <- length(vocabulary)
+  preprocessing_info$final_doc_count <- nrow(dtm)
+  preprocessing_info$dtm_sparsity <- 1 - (sum(dtm != 0) / (nrow(dtm) * ncol(dtm)))
+
+  return(list(
+    dtm = dtm,
+    vocabulary = vocabulary,
+    preprocessing_info = preprocessing_info
+  ))
+}
+```
+
+## Visualisation of data
+
+### Visualisation of document term matrix and vocabulary
+
+```{r dtm-vocab}
+train_data <- read_csv("data/4-spam/train.csv", show_col_types = FALSE)
+
+train_preprocessed <- build_preprocessing_pipeline(
+  texts = train_data$Message,
+  do_stem = FALSE,
+  do_lemma = TRUE,
+  remove_stopwords = TRUE,
+  stopwords_list = NULL,
+  ngram = 1, # unigrams, bigrams=2, trigrams=3
+  tokenize_special = TRUE,
+  vocabulary = NULL
+)
+
+dtm <- train_preprocessed$dtm
+rownames(dtm) <- paste0("train_", seq_len(nrow(dtm)))
+
+
+term_freq <- colSums(dtm)
+term_freq_sorted <- sort(term_freq, decreasing = TRUE)
+
+top_terms_table <- data.frame(
+  term = names(term_freq_sorted),
+  freq = as.integer(term_freq_sorted)
+)[1:10, ]
+
+
+
+top_terms <- top_terms_table$term
+dtm_top <- dtm[, top_terms]
+```
+
+### DTM
+
+```{r dtm}
+dtm_top[1:5, ]
+```
+### Top terms by frequency
+
+```{r top-terms}
+top_terms_table
+```
+
+### Create word counts by class for visualization
+
+```{r word-counts-by-class}
+word_counts <- data.frame()
+
+for (class_label in unique(train_data$Category)) {
+  class_indices <- which(train_data$Category == class_label)
+  class_word_counts <- colSums(dtm[class_indices, , drop = FALSE])
+  class_df <- data.frame(
+    label = class_label,
+    word = names(class_word_counts),
+    n = as.numeric(class_word_counts),
+    stringsAsFactors = FALSE
+  )
+
+  class_df <- class_df[class_df$n > 0, ]
+  word_counts <- rbind(word_counts, class_df)
+}
+
+word_counts <- word_counts %>%
+  arrange(label, desc(n))
+```
+
+### Word frequency visualisations histogram and wordcloud
+
+```{r top-words-by-class}
+top_words_by_class <- word_counts %>%
+  group_by(label) %>%
+  top_n(15, n) %>%
+  ungroup()
+
+top_words_by_class %>%
+  ggplot(aes(x = reorder(word, n), y = n, fill = label)) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~label, scales = "free") +
+  coord_flip() +
+  labs(
+    title = "Top 15 Words/Tokens in Ham vs Spam (Preprocessed Data)",
+    x = "Word/Token",
+    y = "Frequency"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.y = element_text(size = 8),
+    plot.title = element_text(size = 12),
+    strip.text = element_text(size = 10),
+    panel.spacing = unit(0.5, "cm")
+  )
+```
+
+```{r word-cloud}
+regular_words <- word_counts %>%
+  filter(!word %in% c("email", "url", "phone", "money", "longnum"))
+
+ham_words <- subset(regular_words, label == "ham")
+spam_words <- subset(regular_words, label == "spam")
+
+par(mfrow = c(1, 2), mar = c(0, 0, 3, 0))
+
+wordcloud(
+  words = ham_words$word,
+  freq = ham_words$n,
+  min.freq = 5,
+  max.words = 100,
+  scale = c(3, 0.5),
+  colors = brewer.pal(8, "Dark2")
+)
+title("Ham Messages", cex.main = 1.2)
+
+wordcloud(
+  words = spam_words$word,
+  freq = spam_words$n,
+  min.freq = 5,
+  max.words = 100,
+  scale = c(3, 0.5),
+  colors = brewer.pal(8, "Set1")
+)
+title("Spam Messages", cex.main = 1.2)
+
+par(mfrow = c(1, 1), mar = c(5.1, 4.1, 4.1, 2.1))
+```
+
+## Classifier implementation
+
+```{r classifier-implementation}
+naiveBayes <- setRefClass("naiveBayes",
+  fields = list(
+    model = "list",
+    vocabulary = "character",
+    preprocessing_params = "list"
+  ),
+  methods = list(
+    fit = function(X, y, laplace = 1, do_stem = FALSE, do_lemma = TRUE, remove_stopwords = TRUE, ngram = 1, tokenize_special = TRUE) {
+      train_preprocessed <- build_preprocessing_pipeline(
+        texts = X,
+        do_stem = do_stem,
+        do_lemma = do_lemma,
+        remove_stopwords = remove_stopwords,
+        stopwords_list = NULL,
+        ngram = ngram,
+        tokenize_special = tokenize_special,
+        vocabulary = NULL
+      )
+
+      dtm <- train_preprocessed$dtm
+      vocabulary <<- train_preprocessed$vocabulary
+      # Store preprocessing parameters from pipeline
+      preprocessing_params <<- train_preprocessed$preprocessing_info
+
+      # Train multinomial Naive Bayes
+      labels <- as.character(y)
+      classes <- sort(unique(labels))
+      n_docs <- nrow(dtm)
+      n_terms <- ncol(dtm)
+
+      # calculate priority probabilities
+      class_counts <- table(labels)
+      class_priors <- class_counts / n_docs
+      log_priors <- log(class_priors) # avoid overflow
+
+      # word probability
+      term_counts_by_class <- matrix(0,
+        nrow = length(classes), ncol = n_terms,
+        dimnames = list(classes, colnames(dtm))
+      )
+      for (cls in classes) {
+        rows_in_class <- which(labels == cls)
+        term_counts_by_class[cls, ] <- colSums(dtm[rows_in_class, , drop = FALSE])
+      }
+
+      class_total_terms <- rowSums(term_counts_by_class)
+
+      # laplace and log
+      numerator <- term_counts_by_class + laplace
+      denominator <- class_total_terms + laplace * n_terms
+
+      log_likelihoods <- log(t(numerator / denominator))
+
+      # Store model
+      model <<- list(
+        classes = classes,
+        log_priors = log_priors,
+        log_likelihoods = log_likelihoods,
+        vocabulary = colnames(dtm)
+      )
+    },
+    predict = function(message) {
+      if (is.null(model) || length(model) == 0) {
+        stop("Model not trained. Please call fit() first.")
+      }
+      test_preprocessed <- build_preprocessing_pipeline(
+        texts = message,
+        do_stem = preprocessing_params$do_stem,
+        do_lemma = preprocessing_params$do_lemma,
+        remove_stopwords = preprocessing_params$remove_stopwords,
+        stopwords_list = NULL,
+        ngram = preprocessing_params$ngram,
+        tokenize_special = preprocessing_params$tokenize_special,
+        vocabulary = vocabulary
+      )
+
+      dtm_new <- test_preprocessed$dtm
+
+      vocab <- model$vocabulary
+      dtm_aligned <- matrix(0,
+        nrow = nrow(dtm_new), ncol = length(vocab),
+        dimnames = list(rownames(dtm_new), vocab)
+      )
+      common_cols <- intersect(colnames(dtm_new), vocab)
+      if (length(common_cols) > 0) {
+        dtm_aligned[, common_cols] <- dtm_new[, common_cols]
+      }
+
+      # Calculate scores
+      # dtm_aligned: n_docs x n_vocab, log_likelihoods: n_vocab x n_classes
+      scores_mat <- dtm_aligned %*% model$log_likelihoods
+      scores_mat <- sweep(scores_mat, 2, model$log_priors, "+")
+
+      # Get winning class
+      best_class_idx <- max.col(scores_mat, ties.method = "first")
+      predictions <- model$classes[best_class_idx]
+      return(predictions)
+    },
+    score = function(X_test, y_test) {
+      if (is.null(model) || length(model) == 0) {
+        stop("Model not trained. Please call fit() first.")
+      }
+      # Get predictions for test data
+      predictions <- sapply(X_test, function(msg) predict(msg))
+
+      # Calculate accuracy
+      correct_predictions <- sum(predictions == y_test)
+      total_predictions <- length(y_test)
+      accuracy <- correct_predictions / total_predictions
+
+      # Create confusion matrix
+      classes <- sort(unique(c(predictions, y_test)))
+      confusion_matrix <- matrix(0, nrow = length(classes), ncol = length(classes))
+      rownames(confusion_matrix) <- paste("Predicted", classes)
+      colnames(confusion_matrix) <- paste("Actual", classes)
+
+      for (i in seq_along(predictions)) {
+        pred_idx <- which(classes == predictions[i])
+        actual_idx <- which(classes == y_test[i])
+        confusion_matrix[pred_idx, actual_idx] <- confusion_matrix[pred_idx, actual_idx] + 1
+      }
+
+      # Calculate precision, recall, F1 for each class
+      results <- data.frame(
+        Class = classes,
+        Precision = numeric(length(classes)),
+        Recall = numeric(length(classes)),
+        F1_Score = numeric(length(classes)),
+        stringsAsFactors = FALSE
+      )
+
+      for (i in seq_along(classes)) {
+        cls <- classes[i]
+        tp <- confusion_matrix[i, i] # true positives
+        fp <- sum(confusion_matrix[i, ]) - tp # false positives
+        fn <- sum(confusion_matrix[, i]) - tp # false negatives
+
+        precision <- if (tp + fp == 0) 0 else tp / (tp + fp)
+        recall <- if (tp + fn == 0) 0 else tp / (tp + fn)
+        f1 <- if (precision + recall == 0) 0 else 2 * (precision * recall) / (precision + recall)
+
+        results[i, "Precision"] <- round(precision, 4)
+        results[i, "Recall"] <- round(recall, 4)
+        results[i, "F1_Score"] <- round(f1, 4)
+      }
+
+      # Return comprehensive results
+      return(list(
+        accuracy = round(accuracy, 4),
+        correct = correct_predictions,
+        total = total_predictions,
+        confusion_matrix = confusion_matrix,
+        class_metrics = results
+      ))
+    }
+  )
+)
+
+model <- naiveBayes()
+```
+
+## Example Usage (Predicting Spam vs Ham) for single message and batch of messages
+
+```{r run-usage-classified}
+train_data <- read_csv("data/4-spam/train.csv", show_col_types = FALSE)
+model <- naiveBayes()
+model$fit(X = train_data$Message, y = train_data$Category)
+
+test_message <- "Free money!!! Click here to claim your prize."
+prediction <- model$predict(test_message)
+print(paste("Prediction:", prediction))
+
+test_data <- read_csv("data/4-spam/test.csv", show_col_types = FALSE)
+test_predictions <- sapply(test_data$Message, function(msg) model$predict(msg))
+print(paste("First 5 predictions:", paste(test_predictions[1:5], collapse = ", ")))
+```
+
+## Parameter Comparison Experiments
+
+### Testing Different Preprocessing Parameters
+
+```{r setting-experiments}
+# Load test data for evaluation
+test_data <- read_csv("data/4-spam/test.csv", show_col_types = FALSE)
+
+experiments <- list(
+  "Baseline (Lemma + No Stopwords + Unigrams + Special)" = list(
+    do_stem = FALSE, do_lemma = TRUE, remove_stopwords = FALSE,
+    ngram = 1, tokenize_special = TRUE
+  ),
+  "Stemming + Stopwords + Unigrams + Special" = list(
+    do_stem = TRUE, do_lemma = FALSE, remove_stopwords = TRUE,
+    ngram = 1, tokenize_special = TRUE
+  ),
+  "Lemma + Stopwords + Bigrams + Special" = list(
+    do_stem = FALSE, do_lemma = TRUE, remove_stopwords = TRUE,
+    ngram = 2, tokenize_special = TRUE
+  ),
+  "Lemma + Stopwords + Trigrams + Special" = list(
+    do_stem = FALSE, do_lemma = TRUE, remove_stopwords = TRUE,
+    ngram = 3, tokenize_special = TRUE
+  ),
+  "Lemma + Stopwords + Unigrams + No Special" = list(
+    do_stem = FALSE, do_lemma = TRUE, remove_stopwords = TRUE,
+    ngram = 1, tokenize_special = FALSE
+  )
+)
+
+experiment_results <- list()
+confusion_matrices <- list()
+
+# Run experiments
+for (exp_name in names(experiments)) {
+  params <- experiments[[exp_name]]
+  model_exp <- naiveBayes()
+  model_exp$fit(
+    X = train_data$Message,
+    y = train_data$Category,
+    do_stem = params$do_stem,
+    do_lemma = params$do_lemma,
+    remove_stopwords = params$remove_stopwords,
+    ngram = params$ngram,
+    tokenize_special = params$tokenize_special
+  )
+  # Evaluate on test data
+  results <- model_exp$score(test_data$Message, test_data$Category)
+  experiment_results[[exp_name]] <- results
+  confusion_matrices[[exp_name]] <- results$confusion_matrix
+}
+```
+
+```{r creating-summary-table}
+comparison_data <- data.frame(
+  Experiment = names(experiment_results),
+  Accuracy = sapply(experiment_results, function(x) x$accuracy),
+  Correct = sapply(experiment_results, function(x) x$correct),
+  Total = sapply(experiment_results, function(x) x$total),
+  SPAM_Precision = sapply(experiment_results, function(x) {
+    spam_row <- which(x$class_metrics$Class == "spam")
+    if (length(spam_row) > 0) x$class_metrics$Precision[spam_row] else 0
+  }),
+  SPAM_Recall = sapply(experiment_results, function(x) {
+    spam_row <- which(x$class_metrics$Class == "spam")
+    if (length(spam_row) > 0) x$class_metrics$Recall[spam_row] else 0
+  }),
+  SPAM_F1 = sapply(experiment_results, function(x) {
+    spam_row <- which(x$class_metrics$Class == "spam")
+    if (length(spam_row) > 0) x$class_metrics$F1_Score[spam_row] else 0
+  }),
+  HAM_Precision = sapply(experiment_results, function(x) {
+    ham_row <- which(x$class_metrics$Class == "ham")
+    if (length(ham_row) > 0) x$class_metrics$Precision[ham_row] else 0
+  }),
+  HAM_Recall = sapply(experiment_results, function(x) {
+    ham_row <- which(x$class_metrics$Class == "ham")
+    if (length(ham_row) > 0) x$class_metrics$Recall[ham_row] else 0
+  }),
+  HAM_F1 = sapply(experiment_results, function(x) {
+    ham_row <- which(x$class_metrics$Class == "ham")
+    if (length(ham_row) > 0) x$class_metrics$F1_Score[ham_row] else 0
+  }),
+  stringsAsFactors = FALSE
+)
+```
+
+```{r detailed-metrics-tables}
+# Detailed SPAM metrics table
+spam_metrics <- data.frame(
+  Configuration = c("Baseline", "Stemming", "Bigrams", "Trigrams", "No Special"),
+  Precision = round(comparison_data$SPAM_Precision, 3),
+  Recall = round(comparison_data$SPAM_Recall, 3),
+  F1_Score = round(comparison_data$SPAM_F1, 3)
+)
+print("SPAM Detection Performance:")
+spam_metrics
+```
+
+```{r detailed-ham-metrics}
+# Detailed HAM metrics table
+ham_metrics <- data.frame(
+  Configuration = c("Baseline", "Stemming", "Bigrams", "Trigrams", "No Special"),
+  Precision = round(comparison_data$HAM_Precision, 3),
+  Recall = round(comparison_data$HAM_Recall, 3),
+  F1_Score = round(comparison_data$HAM_F1, 3)
+)
+print("HAM Detection Performance:")
+ham_metrics
+```
+
+### 1. Acсuracy Comparison Bar Plot
+
+```{r fig.width=14, fig.height=8}
+# Prepare data for plotting with shorter labels
+plot_data <- comparison_data
+plot_data$Short_Label <- c("Baseline\n(Lemma+NoStop)", "Stemming\n(+Stopwords)", "Bigrams\n(Lemma+Stop)", "Trigrams\n(Lemma+Stop)", "No Special\n(Lemma+Stop)")
+plot_data$Short_Label <- factor(plot_data$Short_Label, levels = plot_data$Short_Label)
+
+ggplot(plot_data, aes(x = Short_Label, y = Accuracy, fill = Short_Label)) +
+  geom_col(alpha = 0.8, width = 0.7) +
+  geom_text(aes(label = paste0(round(Accuracy * 100, 2), "%")),
+    vjust = -0.5, size = 3.5, fontface = "bold"
+  ) +
+  scale_y_continuous(limits = c(0, 1.05), labels = scales::percent) +
+  scale_fill_brewer(type = "qual", palette = "Set2") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(size = 9, lineheight = 0.8),
+    legend.position = "none",
+    plot.title = element_text(size = 14, hjust = 0.5),
+    axis.title = element_text(size = 11),
+    plot.margin = margin(20, 20, 20, 20)
+  ) +
+  labs(
+    title = "Model Accuracy Comparison Across Different Parameters",
+    subtitle = "Higher is better",
+    x = "Parameter Configuration",
+    y = "Accuracy"
+  )
+```
+
+### 2. Detailed Metrics Comparison
+
+```{r fig.width=16, fig.height=8}
+# Add shorter labels for better readability
+comparison_data_short <- comparison_data
+comparison_data_short$Short_Label <- c("Baseline", "Stemming", "Bigrams", "Trigrams", "No Special")
+
+metrics_long <- comparison_data_short %>%
+  select(
+    Short_Label, SPAM_Precision, SPAM_Recall, SPAM_F1,
+    HAM_Precision, HAM_Recall, HAM_F1
+  ) %>%
+  pivot_longer(cols = -Short_Label, names_to = "Metric", values_to = "Value") %>%
+  separate(Metric, into = c("Class", "Metric_Type"), sep = "_")
+
+ggplot(metrics_long, aes(x = Short_Label, y = Value, fill = Metric_Type)) +
+  geom_col(position = "dodge", alpha = 0.8) +
+  facet_wrap(~Class, ncol = 2, scales = "free") +
+  geom_text(aes(label = round(Value, 3)),
+    position = position_dodge(width = 0.9),
+    vjust = -0.5, size = 2.8
+  ) +
+  scale_y_continuous(limits = c(0, 1.1)) +
+  scale_fill_brewer(type = "qual", palette = "Set1") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
+    strip.text = element_text(size = 12, face = "bold"),
+    plot.title = element_text(size = 16, hjust = 0.5)
+  ) +
+  labs(
+    title = "Detailed Performance Metrics by Class",
+    subtitle = "Precision, Recall, and F1-Score for SPAM and HAM detection",
+    x = "Parameter Configuration",
+    y = "Score",
+    fill = "Metric"
+  )
+```
+
+### 3. Confusion Matrices Visualization
+
+```{r fig.width=18, fig.height=12}
+# Create a function to plot confusion matrix with TP/TN/FP/FN labels
+plot_confusion_matrix <- function(cm, title) {
+  # Convert to data frame for ggplot
+  cm_df <- expand.grid(
+    Predicted = rownames(cm),
+    Actual = colnames(cm)
+  )
+  cm_df$Count <- as.vector(cm)
+
+  # Calculate percentages
+  total <- sum(cm)
+  cm_df$Percentage <- cm_df$Count / total * 100
+
+  # Add TP/TN/FP/FN labels
+  cm_df$Label <- ""
+
+  # Extract class names from Predicted and Actual columns (remove "Predicted " and "Actual " prefixes)
+  cm_df$pred_class <- gsub("Predicted ", "", cm_df$Predicted)
+  cm_df$actual_class <- gsub("Actual ", "", cm_df$Actual)
+
+  for (i in seq_len(nrow(cm_df))) {
+    pred <- cm_df$pred_class[i]
+    actual <- cm_df$actual_class[i]
+
+    if (pred == actual) {
+      if (pred == "spam") {
+        cm_df$Label[i] <- "TRUE POSITIVE"
+      } else {
+        cm_df$Label[i] <- "TRUE NEGATIVE"
+      }
+    } else {
+      if (pred == "spam") {
+        cm_df$Label[i] <- "FALSE POSITIVE"
+      } else {
+        cm_df$Label[i] <- "FALSE NEGATIVE"
+      }
+    }
+  }
+
+  ggplot(cm_df, aes(x = Actual, y = Predicted, fill = Count)) +
+    geom_tile(color = "white", size = 1) +
+    geom_text(aes(label = paste0(Label, "\n", Count, "\n(", round(Percentage, 1), "%)")),
+      size = 3, fontface = "bold"
+    ) +
+    scale_fill_gradient(low = "lightblue", high = "darkblue") +
+    theme_minimal() +
+    theme(
+      plot.title = element_text(size = 11, hjust = 0.5),
+      axis.title = element_text(size = 10),
+      legend.position = "none"
+    ) +
+    labs(title = title, x = "Actual", y = "Predicted")
+}
+
+confusion_plots <- list()
+for (i in seq_along(confusion_matrices)) {
+  exp_name <- names(confusion_matrices)[i]
+  short_title <- gsub("Baseline \\(|\\)", "", exp_name)
+  short_title <- gsub(" \\+ ", "\n+ ", short_title)
+  confusion_plots[[i]] <- plot_confusion_matrix(confusion_matrices[[i]], short_title)
+}
+
+do.call(grid.arrange, c(confusion_plots, ncol = 3))
+```
+
+### 4. Best Configuration Analysis
+
+```{r}
+best_accuracy_idx <- which.max(comparison_data$Accuracy)
+best_config <- comparison_data[best_accuracy_idx, ]
+
+best_summary <- data.frame(
+  Metric = c("Best Configuration", "Accuracy (%)", "SPAM F1-Score", "HAM F1-Score"),
+  Value = c(
+    as.character(best_config$Experiment),
+    paste0(round(best_config$Accuracy * 100, 2), "%"),
+    round(best_config$SPAM_F1, 4),
+    round(best_config$HAM_F1, 4)
+  )
+)
+best_summary
+```
+
+## Conclusions
+
+### Mathematical Foundation
+
+We implemented a Multinomial Naive Bayes classifier based on Bayes' theorem. The mathematical foundation consists of several key components:
+
+**1. Bayes' Theorem:**
+$$P(c|d) = \frac{P(d|c) \cdot P(c)}{P(d)}$$
+
+Where:
+- $P(c|d)$ is the posterior probability of class $c$ given document $d$
+- $P(d|c)$ is the likelihood of document $d$ given class $c$
+- $P(c)$ is the prior probability of class $c$
+- $P(d)$ is the evidence (marginal probability of document $d$)
+
+**2. Classification Decision Rule:**
+
+For classification, we calculate the probability for each class:
+- Calculate $P(\text{spam}|d) = P(d|\text{spam}) \cdot P(\text{spam})$
+- Calculate $P(\text{ham}|d) = P(d|\text{ham}) \cdot P(\text{ham})$
+- If $P(\text{spam}|d) > P(\text{ham}|d)$, classify as spam, otherwise as ham
+
+**3. Multinomial Naive Bayes Model:**
+
+Assuming conditional independence between words (naive assumption), the likelihood becomes:
+$$P(d|c) = \prod_{i=1}^{|V|} P(w_i|c)^{n_i}$$
+
+Where:
+- $|V|$ is the vocabulary size
+- $w_i$ is the $i$-th word in vocabulary
+- $n_i$ is the count of word $w_i$ in document $d$
+
+**4. Parameter Estimation:**
+
+**Prior Probability:**
+$$P(c) = \frac{N_c}{N}$$
+Where $N_c$ is the number of documents in class $c$ and $N$ is the total number of documents.
+
+**Word Probability with Laplace Smoothing:**
+$$P(w_i|c) = \frac{\text{count}(w_i, c) + \alpha}{\sum_{w \in V} \text{count}(w, c) + \alpha|V|}$$
+
+Where:
+- $\text{count}(w_i, c)$ is the frequency of word $w_i$ in class $c$
+- $\alpha$ is the smoothing parameter (Laplace smoothing, typically $\alpha = 1$)
+- $|V|$ is the vocabulary size
+
+**5. Log-Space Computation:**
+
+To avoid numerical underflow, we work in log-space:
+$$\log P(c|d) \propto \log P(c) + \sum_{i=1}^{|V|} n_i \log P(w_i|c)$$
+
+**Final Classification in Log-Space:**
+
+For each class, calculate the score:
+$$\text{Score}(c) = \log P(c) + \sum_{i=1}^{|V|} n_i \log P(w_i|c)$$
+
+Then compare:
+- If $\text{Score}(\text{spam}) > \text{Score}(\text{ham})$, classify as spam
+- Otherwise, classify as ham
+
+**Pros:** Works well with small datasets, handles high-dimensional sparse data effectively, probabilistic output.
+
+**Cons:** Strong independence assumption (words are independent), sensitive to unstable data, bad performance with unseen word combinations in test data.
+
+**Accuracy vs F1-Score:** Accuracy can be misleading with imbalanced datasets (For example 95% ham, 5% spam). A model predicting "all ham" would have 95% accuracy but 0% spam detection. F1-score balances precision and recall, providing better insight into performance on minority classes, which is crucial for spam detection where missing spam (false negatives) is costly.

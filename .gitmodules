@@ -1,0 +1,9 @@
+[submodule "linear-algebra/lab1"]
+	path = linear-algebra/lab1
+	url = https://github.com/yuriifito/LA_Lab1.git
+[submodule "linear-algebra/lab3"]
+	path = linear-algebra/lab3
+	url = git@github.com:ke1rro/La3.git
+[submodule "discrete-math/discrete-math-2/socket-chat-rsa-oaep"]
+	path = discrete-math/discrete-math-2/socket-chat-rsa-oaep
+	url = https://github.com/ke1rro/socket-chat-rsa-oaep.git

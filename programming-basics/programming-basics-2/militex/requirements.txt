@@ -1,0 +1,47 @@
+# Core 
+setuptools==67.8.0  
+wheel==0.40.0 
+Django==4.2.11
+asgiref==3.7.2
+sqlparse==0.4.4
+
+# REST Framework
+djangorestframework==3.14.0
+djangorestframework-simplejwt==5.4.0
+
+# Database
+# Replace psycopg2-binary with psycopg which has better Python 3.13 compatibility
+psycopg==3.1.10
+dj-database-url==2.1.0
+
+# Utilities
+django-cors-headers==4.3.0
+django-extensions==3.2.3
+django-filter==23.5
+whitenoise==6.5.0
+
+# Deployment
+gunicorn==21.2.0
+
+# Web scraping and parsing
+beautifulsoup4==4.12.2
+soupsieve==2.5
+bs4==0.0.2
+requests==2.31.0
+urllib3==2.0.7
+certifi==2023.11.17
+charset-normalizer==3.3.2
+idna==3.4
+
+# Image processing
+pillow==11.2.1
+
+# Auth and JWT
+PyJWT==2.8.0
+
+# Time
+pytz==2023.3
+tzdata==2023.3
+
+# Type checking
+typing_extensions==4.8.0
